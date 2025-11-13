@@ -53,6 +53,32 @@ const assets ={
 }
 export default assets
 
+export const cards = [
+    {
+      icon: assets.people,
+      number: 120,
+      title: "Students Enrolled",
+      description: "Total number of active students",
+    },
+    {
+      icon: assets.successrate,
+      number: "100%",
+      title: "Success Rate",
+      description: "Achieve target scores",
+    },
+    {
+      icon: assets.achivement,
+      number: "7.5+",
+      title: "Average Score",
+      description: "Band 7-9 guaranteed",
+    },
+    {
+      icon: assets.secure,
+      number: "100%",
+      title: "Secure",
+      description: "Money-back guarantee",
+    },
+  ];
 
 export const navItems = [
     { id: "home", label: "Home" },

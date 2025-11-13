@@ -32,6 +32,7 @@ const App = () => {
           <Blog />
         </section>
       </main>
+      
     </div>
   );
 

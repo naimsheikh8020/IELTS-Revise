@@ -12,8 +12,8 @@ const StudentCard = ({
     <div className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center gap-2">
       
       {/* Icon */}
-      <div className={` p-3 rounded-full`}>
-        <img src={icon} alt={title} className="h-6 w-6 sm:h-8 sm:w-8" />
+      <div className={` p-4 rounded-full`}>
+        <img src={icon} alt={title} className="h-full w-full sm:h-12 sm:w-12" />
       </div>
 
       {/* Number */}
