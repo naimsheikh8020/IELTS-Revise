@@ -1,10 +1,12 @@
 import React from "react";
 import { Check } from "lucide-react";
+import Trusted from "../section/Trusted";
 
 const Home = () => {
   return (
-    <section className="px-0  md:px-12 py-8 sm:py-12">
-      <div className="flex flex-col lg:flex-row items-center gap-8 px-4 sm:px-0">
+    <>
+    <section className="px-4 sm:px-6 lg:px-8 min-h-[89vh] py-8 sm:py-12">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 xl:gap-16">
         {/* Left Side - 50% */}
         <div className="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6">
           {/* Top Achievement - width auto */}
@@ -16,7 +18,7 @@ const Home = () => {
           </div>
 
           {/* Header */}
-          <h1 className="text-black font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight sm:leading-[85px]">
+          <h1 className="text-black font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
             Score Higher on <br />
             <span className="text-blue-600">IELTS</span> With 20,000+ <br />
             Real Questions
@@ -36,18 +38,18 @@ const Home = () => {
             </div>
             <div className="inline-flex gap-2 bg-green-100 w-max px-4 sm:px-6 py-2 rounded-2xl items-center">
               <Check className="text-green-600 font-semibold w-4 h-4 sm:w-5 sm:h-5" />
-              <p className="text-sm sm:text-base font-semibold">Real Exam Question</p>
+              <p className="text-sm sm:text-base font-semibold">Instant feedback</p>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-3 sm:gap-6">
             <div className="inline-flex gap-2 bg-green-100 w-max px-4 sm:px-6 py-2 rounded-2xl items-center">
               <Check className="text-green-600 font-semibold w-4 h-4 sm:w-5 sm:h-5" />
-              <p className="text-sm sm:text-base font-semibold">Real Exam Question</p>
+              <p className="text-sm sm:text-base font-semibold">Try free - no card</p>
             </div>
             <div className="inline-flex gap-2 bg-green-100 w-max px-4 sm:px-6 py-2 rounded-2xl items-center">
               <Check className="text-green-600 font-semibold w-4 h-4 sm:w-5 sm:h-5" />
-              <p className="text-sm sm:text-base font-semibold">Real Exam Question</p>
+              <p className="text-sm sm:text-base font-semibold">7-day guarantee</p>
             </div>
           </div>
 
@@ -58,8 +60,8 @@ const Home = () => {
         </div>
 
         {/* Right Side - 50% */}
-        <div className="w-full lg:w-1/2 flex justify-center">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 w-full max-w-sm min-h-[600px] lg:h-[75vh] border-2 border-transparent shadow-xl"
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 w-full max-w-md border-2 border-transparent shadow-xl"
                style={{
                  borderImageSlice: 1,
                  borderImageSource: "linear-gradient(90deg, #2563EB 0%, #0B99CE 100%)"
@@ -121,6 +123,9 @@ const Home = () => {
         </div>
       </div>
     </section>
+    
+    <Trusted />
+    </>
   );
 };
 

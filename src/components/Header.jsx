@@ -53,14 +53,14 @@ const Header = () => {
       {/* Mobile Overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-40 z-40"
+          className="fixed inset-0 bg-black bg-opacity-40 "
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-xl p-6 pt-20
+        className={`fixed top-0 right-0 h-full w-64 bg-white  shadow-xl p-6 pt-20
           transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <button className="absolute top-5 right-5" onClick={() => setOpen(false)}>

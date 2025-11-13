@@ -5,6 +5,7 @@ import Features from "./pages/Features"
 import Reviews from "./pages/Reviews"
 import Pricing from "./pages/Pricing"
 import Blog from "./pages/Blog"
+import Trusted from './section/Trusted';
 
 const App = () => {
   return (
