@@ -21,10 +21,12 @@ import time from "./time.png"
 import successrate from "./success_rate.png"
 import twitter from "./twitter.png"
 import writing from "./writing.png"
-
+import top_Achivment from "./top_Achivment.png"
+import correct from "./correct.png"
 
 const assets ={
     achivement,
+    correct,
     average_score,
     client,
     authentic,
@@ -46,6 +48,16 @@ const assets ={
     time,
     successrate,
     twitter,
-    writing
+    writing,
+    top_Achivment
 }
 export default assets
+
+
+export const navItems = [
+    { id: "home", label: "Home" },
+    { id: "features", label: "Features" },
+    { id: "reviews", label: "Reviews" },
+    { id: "pricing", label: "Pricing" },
+    { id: "blog", label: "Blog" },
+  ];

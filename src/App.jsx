@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <main className="pt-20">
+      <main className="mt-5 px-12">
         <section id="home" name="home">
           <Home />
         </section>
