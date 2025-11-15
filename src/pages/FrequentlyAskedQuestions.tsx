@@ -29,7 +29,7 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
   return (
     // Conditional styling for the active (open) card
     <div className={`
-      mb-3 last:mb-0 rounded-xl shadow-sm transition-all duration-300 ease-in-out
+      mb-3 last:mb-0 rounded-xl shadow-sm transition-all duration-300 ease-in-out container mx-auto
       ${isOpen 
         ? 'border border-blue-400 bg-white shadow-lg' 
         : 'border border-gray-100 bg-white hover:border-gray-300'
@@ -95,6 +95,7 @@ const FrequentlyAskedQuestions = () => {
         <div>
           {faqItems.map((item, index) => (
             <AccordionItem
+           
               key={index}
               item={item}
               isOpen={openIndex === index}
