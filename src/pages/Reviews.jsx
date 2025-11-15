@@ -1,6 +1,7 @@
 import React from 'react'
 import assets from '../assets/assets';
 import { CheckCircle2,Star } from 'lucide-react';
+import ResultTable from '../section/ResultTable';
 
 const Reviews = () => {
   const students = [
@@ -133,6 +134,7 @@ const Reviews = () => {
           ))}
         </div>
       </div>
+      <ResultTable/>
     </div>
   );
 }
