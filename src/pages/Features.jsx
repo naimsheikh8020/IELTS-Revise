@@ -53,7 +53,6 @@ const Features = () => {
         </div>
       </div>
       <Track_Your_Progress/>
-      <Student_Result/>
     </div>
   );
 };
