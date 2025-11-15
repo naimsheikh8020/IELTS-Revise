@@ -1,13 +1,15 @@
-import React from 'react'
-import Header from './components/Header';
-import Home from "./pages/Home"
-import Features from "./pages/Features"
-import Reviews from "./pages/Reviews"
-import Pricing from "./pages/Pricing"
-import Blog from "./pages/Blog"
-import Trusted from './section/Trusted';
-import PricingPage from './pages/PricingCard';
-import FrequentlyAskedQuestions from './pages/FrequentlyAskedQuestions';
+import React from "react";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Features from "./pages/Features";
+import Reviews from "./pages/Reviews";
+import Pricing from "./pages/Pricing";
+import Blog from "./pages/Blog";
+import Trusted from "./section/Trusted";
+import PricingPage from "./pages/PricingCard";
+import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
+import ReadyToAchieve from "./pages/ReadyToAchieve";
+import Footer from "./pages/Footer";
 
 const App = () => {
   return (
@@ -33,17 +35,21 @@ const App = () => {
         <section id="blog" name="blog">
           <Blog />
         </section>
-         <section id="pricing" name="pricing">
+        <section id="pricing" name="pricing">
           <PricingPage />
         </section>
-         <section id="FrequentlyAskedQuestions" name="FrequentlyAskedQuestions">
+        <section id="FrequentlyAskedQuestions" name="FrequentlyAskedQuestions">
           <FrequentlyAskedQuestions />
         </section>
+        <section id="ReadyToAchieve" name="ReadyToAchieve">
+          <ReadyToAchieve />
+        </section>
+        <section id="footer" name="footer">
+          <Footer />
+        </section>
       </main>
-      
     </div>
   );
+};
 
-}
-
-export default App
+export default App;
