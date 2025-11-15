@@ -4,7 +4,7 @@ import assets from "../assets/assets";
 const Track_Your_Progress = () => {
   return (
     <div className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-blue-50 rounded-xl">
-      <div className="max-w-6xl mx-auto">
+      <div className=" container mx-auto">
         {/* Header Section */}
         <div className="mb-12">
           <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-center">

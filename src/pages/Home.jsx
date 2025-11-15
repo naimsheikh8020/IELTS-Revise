@@ -6,7 +6,7 @@ import Start_Practicing from "../section/Start_Practicing";
 const Home = () => {
   return (
     <>
-    <section className="px-4 sm:px-6 lg:px-8 min-h-[89vh] py-8 sm:py-12">
+    <section className="px-4 container mx-auto sm:px-6 lg:px-8 min-h-[89vh] py-8 sm:py-12">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 xl:gap-16">
         {/* Left Side - 50% */}
         <div className="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6">
