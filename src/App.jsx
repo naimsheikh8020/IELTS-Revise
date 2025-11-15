@@ -54,7 +54,6 @@ import Reviews from "./pages/Reviews";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import Trusted from "./section/Trusted";
-import PricingPage from "./pages/PricingCard";
 import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
 import ReadyToAchieve from "./pages/ReadyToAchieve";
 import Footer from "./pages/Footer";
@@ -83,9 +82,7 @@ const App = () => {
         <section id="blog" name="blog">
           <Blog />
         </section>
-        <section id="pricing" name="pricing">
-          <PricingPage />
-        </section>
+        
         <section id="FrequentlyAskedQuestions" name="FrequentlyAskedQuestions">
           <FrequentlyAskedQuestions />
         </section>
