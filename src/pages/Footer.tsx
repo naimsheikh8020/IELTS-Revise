@@ -23,7 +23,7 @@ const InstagramIcon = () => (
 const Footer = () => {
   return (
     <footer className="bg-gray-50 pt-16 pb-6 text-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Grid Layout */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           {/* Column 1: Logo and Description */}
