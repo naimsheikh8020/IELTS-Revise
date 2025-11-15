@@ -8,7 +8,7 @@ const Trusted = () => {
 
   return (
     <div className=" ">
-      <div className="bg-blue-50 p-6 sm:p-8 lg:p-10 rounded-xl ">
+      <div className="bg-blue-50 sm:p-8 lg:p-10 rounded-xl ">
 
         {/* Header */}
         <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-center">

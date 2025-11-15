@@ -10,7 +10,7 @@ const Start_Practicing = () => {
      <p className="text-gray-500 font-normal mt-3 sm:mt-4 text-sm sm:text-base text-center px-4">
           Click any section below to start your practice immediately
     </p>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-12">
+    <div className="grid container mx-auto grid-cols-1 md:grid-cols-4 gap-6  py-12">
       <PracticeCard
         icon={assets.listing}
         title="Listening"
