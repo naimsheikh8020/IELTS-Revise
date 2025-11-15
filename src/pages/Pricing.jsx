@@ -153,10 +153,10 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" bg-white py-12 px-4 sm:px-6 lg:px-8">
 
       {/* 📣 Top Banner */}
-      <div className="max-w-7xl mx-auto mb-10">
+      <div className=" mb-10">
         <div className="text-center">
           <div className="inline-block text-sm font-semibold text-red-700 bg-red-100 py-1.5 px-4 rounded-full shadow-md">
             Save £100/year - Limited spots
@@ -165,13 +165,13 @@ const Pricing = () => {
       </div>
 
       {/* Title */}
-      <div className="max-w-7xl mx-auto text-center mb-12">
+      <div className=" text-center mb-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Choose Your Plan</h1>
         <p className="text-lg text-gray-600">Try free. Upgrade anytime.</p>
       </div>
 
       {/* Pricing Cards Layout: items-start ensures cards align to the top. */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 gap-10 md:grid-cols-3 items-start">
+      <div className="  container mx-auto grid grid-cols-1 gap-10 md:grid-cols-3 items-start">
         {pricingPlans.map((plan, index) => (
           <div key={index} className="relative"> 
             <PricingCard plan={plan} />
