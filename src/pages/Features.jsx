@@ -1,6 +1,7 @@
 import React from "react";
 import PracticeCard from "../components/PracticeCard";
 import assets from "../assets/assets";
+import Track_Your_Progress from "../section/Track_Your_Progress";
 
 const Features = () => {
   return (
@@ -50,6 +51,7 @@ const Features = () => {
           />
         </div>
       </div>
+      <Track_Your_Progress/>
     </div>
   );
 };

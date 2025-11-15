@@ -10,7 +10,7 @@ import Section from './pages/Section';
 
 const App = () => {
   return (
-    <div>
+    <div className='bg-white'>
       <Header />
       <main className="mt-5 md:px-12 sm:px-0">
         <section id="home" name="home">
