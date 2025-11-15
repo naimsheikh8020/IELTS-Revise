@@ -46,7 +46,7 @@ const ResultTable = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 py-8 md:py-12 px-3 md:px-4">
+    <div className="min-h-screen  py-8 md:py-12 px-3 md:px-4 mt-12">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 md:mb-8">
