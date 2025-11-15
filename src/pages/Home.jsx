@@ -1,6 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import Trusted from "../section/Trusted";
+import Start_Practicing from "../section/Start_Practicing";
 
 const Home = () => {
   return (
@@ -125,6 +126,7 @@ const Home = () => {
     </section>
     
     <Trusted />
+    <Start_Practicing/>
     </>
   );
 };
