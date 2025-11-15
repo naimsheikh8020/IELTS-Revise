@@ -33,7 +33,7 @@ const PricingCard = ({ plan }) => {
 
       {/* 🚀 Pro Plan Badge (Most learners choose) */}
       {isPro && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-3 py-1  ml-[90px] mt-3 bg-blue-500 text-white text-xs font-semibold rounded-full shadow-lg whitespace-nowrap">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-3 py-1  lg:ml-[89px] ml-[83px] mt-3 bg-blue-500 text-white text-xs font-semibold rounded-full shadow-lg whitespace-nowrap">
           <span className="mr-1">
             {/* Crown/Star Icon kept for the badge */}
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block align-text-top" fill="none" viewBox="0 0 24 24" stroke="currentColor">
