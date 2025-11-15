@@ -22,7 +22,7 @@ const App = () => {
           path="/"
           element={
             <>
-              <main>
+              <main className="pt-20">
                 <section id="home"><Home /></section>
                 <section id="features"><Features /></section>
                 <section id="reviews"><Reviews /></section>
