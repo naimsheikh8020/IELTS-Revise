@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
 import { Link } from "react-scroll";
+import {Link as LinkRouter} from "react-router-dom"
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
     { label: "Features", to: "features" },
     { label: "Reviews", to: "reviews" },
     { label: "Pricing", to: "pricing" },
-    { label: "Blog", to: "blog" },
+    // { label: "Blog", to: "blog" },
   ];
 
   return (
@@ -39,6 +40,7 @@ const Header = () => {
               {label}
             </Link>
           ))}
+          <LinkRouter to="/blog">Blog</LinkRouter>
 
           <button className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl">
             Get Started
