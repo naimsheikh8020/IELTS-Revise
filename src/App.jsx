@@ -6,6 +6,7 @@ import Reviews from "./pages/Reviews"
 import Pricing from "./pages/Pricing"
 import Blog from "./pages/Blog"
 import Trusted from './section/Trusted';
+import Section from './pages/Section';
 
 const App = () => {
   return (
@@ -14,6 +15,10 @@ const App = () => {
       <main className="mt-5 md:px-12 sm:px-0">
         <section id="home" name="home">
           <Home />
+        </section>
+
+        <section id="section" name="section">
+          <Section />
         </section>
 
         <section id="features" name="features">

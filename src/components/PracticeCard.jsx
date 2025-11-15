@@ -7,6 +7,8 @@ const PracticeCard = ({
   subtitle,
   questionsCount,
   onClick,
+  showButton = true,
+  showQuestion = true,   
 }) => {
   return (
     <div
@@ -40,32 +42,36 @@ const PracticeCard = ({
       {/* Text */}
       <h2 className="text-xl font-semibold">{title}</h2>
       <p className="text-gray-600">{subtitle}</p>
-      <p className="text-gray-900 font-medium">{questionsCount}+ questions</p>
+      {
+        showQuestion && (<p className="text-gray-900 font-medium">{questionsCount}+ questions</p>)
+      }
 
-      {/* Action Button */}
-      <button
-        className="
-          flex 
-          items-center 
-          gap-1
-          text-blue-700 
-          font-medium 
-          mt-2
-          px-4
-          py-2
-          rounded-3xl
-          transition-all
-          duration-300
-          ease-out
-          hover:bg-blue-600 
-          hover:text-white
-          hover:gap-2
-          cursor-pointer
-        "
-      >
-        Start Practice 
-        <ArrowRight className="w-4" />
-      </button>
+      {/* Optional Button */}
+      {showButton && (
+        <button
+          className="
+            flex 
+            items-center 
+            gap-1
+            text-blue-700 
+            font-medium 
+            mt-2
+            px-4
+            py-2
+            rounded-3xl
+            transition-all
+            duration-300
+            ease-out
+            hover:bg-blue-600 
+            hover:text-white
+            hover:gap-2
+            cursor-pointer
+          "
+        >
+          Start Practice 
+          <ArrowRight className="w-4" />
+        </button>
+      )}
     </div>
   );
 };

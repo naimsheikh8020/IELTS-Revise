@@ -5,7 +5,7 @@ import assets from '../assets/assets';
 const Start_Practicing = () => {
  return (
     <div className='px-4 sm:px-6 lg:px-10'>
-    <div className='p-6 my-10 sm:p-8 lg:p-10'>
+    <div className='p-6 mt-10 sm:p-8 lg:p-10'>
         <h2 className='font-bold text-2xl sm:text-3xl lg:text-4xl text-center'>Start Practicing Any Section</h2>
      <p className="text-gray-500 font-normal mt-3 sm:mt-4 text-sm sm:text-base text-center px-4">
           Click any section below to start your practice immediately
