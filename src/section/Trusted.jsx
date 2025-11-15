@@ -8,7 +8,7 @@ const Trusted = () => {
 
   return (
     <div className=" ">
-      <div className="bg-blue-50 p-6 sm:p-8 lg:p-10 rounded-xl">
+      <div className="bg-blue-50 p-6 sm:p-8 lg:p-10 rounded-xl ">
 
         {/* Header */}
         <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-center">
@@ -19,7 +19,7 @@ const Trusted = () => {
         </p>
 
         {/* Cards Grid */}
-        <div className="my-6 sm:my-8 lg:my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="my-6 container mx-auto sm:my-8 lg:my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {cards.map((card, index) => (
             <StudentCard
               key={index}
