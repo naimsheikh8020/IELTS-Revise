@@ -36,6 +36,7 @@ const App = () => {
                 <section id="pricing"><Pricing /></section>
                 <section id="FrequentlyAskedQuestions"><FrequentlyAskedQuestions /></section>
                 <section id="ReadyToAchieve"><ReadyToAchieve /></section>
+                {/* <section id="footer"><Footer /></section> */}
               </main>
             </>
           }

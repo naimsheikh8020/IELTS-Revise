@@ -23,6 +23,7 @@ import twitter from "./twitter.png"
 import writing from "./writing.png"
 import top_Achivment from "./top_Achivment.png"
 import correct from "./correct.png"
+import featuredBlogImage from "./featured-blog.jpg"
 import footer_logo from "./footer_logo-transprant.png"
 
 const assets ={
@@ -51,7 +52,8 @@ const assets ={
     successrate,
     twitter,
     writing,
-    top_Achivment
+    top_Achivment,
+    featuredBlogImage
 }
 export default assets
 
