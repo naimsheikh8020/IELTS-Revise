@@ -4,7 +4,7 @@ import assets from "../assets/assets";
 
 const Section = () => {
   return (
-    <div className="px-4 sm:px-6 lg:px-10">
+    <div className="0">
       <div className="bg-blue-50 p-8 sm:p-10 lg:p-14 rounded-xl">
         <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-center">
           Complete IELTS Preparation

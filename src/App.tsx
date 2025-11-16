@@ -14,7 +14,9 @@ import Footer from "./pages/Footer";
 const App = () => {
   return (
     <div>
-      <Header />
+    <div className="">
+        <Header />
+    </div>
 
       <Routes>
         {/* Landing Page (full scrollable sections) */}
@@ -22,14 +24,14 @@ const App = () => {
           path="/"
           element={
             <>
-              <main>
+              <main className="pt-20">
                 <section id="home"><Home /></section>
                 <section id="features"><Features /></section>
                 <section id="reviews"><Reviews /></section>
                 <section id="pricing"><Pricing /></section>
                 <section id="FrequentlyAskedQuestions"><FrequentlyAskedQuestions /></section>
                 <section id="ReadyToAchieve"><ReadyToAchieve /></section>
-                <section id="footer"><Footer /></section>
+                {/* <section id="footer"><Footer /></section> */}
               </main>
             </>
           }
@@ -38,6 +40,7 @@ const App = () => {
         {/* Separate Blog Page */}
         <Route path="/blog" element={<Blog />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
