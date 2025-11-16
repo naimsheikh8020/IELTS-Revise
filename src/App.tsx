@@ -10,13 +10,14 @@ import Blog from "./pages/Blog";
 import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
 import ReadyToAchieve from "./pages/ReadyToAchieve";
 import Footer from "./pages/Footer";
+import SignIn from "./pages/SignIn"; // Import the SignIn component
 
 const App = () => {
   return (
     <div>
-    <div className="">
+      <div className="">
         <Header />
-    </div>
+      </div>
 
       <Routes>
         {/* Landing Page (full scrollable sections) */}
@@ -31,7 +32,6 @@ const App = () => {
                 <section id="pricing"><Pricing /></section>
                 <section id="FrequentlyAskedQuestions"><FrequentlyAskedQuestions /></section>
                 <section id="ReadyToAchieve"><ReadyToAchieve /></section>
-                
               </main>
             </>
           }
@@ -39,7 +39,11 @@ const App = () => {
 
         {/* Separate Blog Page */}
         <Route path="/blog" element={<Blog />} />
+        
+        {/* Sign In/Sign Up Page */}
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
+      
       <Footer />
     </div>
   );
