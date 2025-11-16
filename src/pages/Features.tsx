@@ -17,7 +17,7 @@ const Features = () => {
         <p className="text-gray-500 font-normal mt-3 sm:mt-4 text-sm sm:text-base text-center px-4">
           Professional features designed by certified IELTS examiners to maximize your score
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6  container mx-auto py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 container mx-auto py-12">
           <PracticeCard
             icon={assets.authentic}
             title="Exam-Authentic Questions"

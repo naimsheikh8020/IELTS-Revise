@@ -171,7 +171,7 @@ const Pricing = () => {
       </div>
 
       {/* Pricing Cards Layout: items-start ensures cards align to the top. */}
-      <div className="  container mx-auto grid grid-cols-1 gap-10 md:grid-cols-3 items-start">
+      <div className="  container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 items-start">
         {pricingPlans.map((plan, index) => (
           <div key={index} className="relative"> 
             <PricingCard plan={plan} />

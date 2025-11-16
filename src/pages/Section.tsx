@@ -12,7 +12,7 @@ const Section = () => {
         <p className="text-gray-500 font-normal mt-3 sm:mt-4 text-sm sm:text-base text-center px-4">
           100,000 authentic exam-style questions across all four sections
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-12" >
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 p-6 py-12" >
           <IeltsCard
             icon={assets.listing}
             iconBg="bg-blue-100"

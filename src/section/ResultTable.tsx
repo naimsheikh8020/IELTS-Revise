@@ -14,7 +14,7 @@ const ResultTable = () => {
   ];
 
   return (
-    <div className="min-h-screen py-8 md:py-12 px-3 md:px-4 mt-12">
+    <div className="min-h-screen ">
 
       {/* CENTER CONTENT (TABLE + HEADER) */}
       <div className="max-w-4xl mx-auto">
@@ -31,7 +31,7 @@ const ResultTable = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-xl md:rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-xl md:rounded-2xl md:px-6 p-6 shadow-lg border border-gray-200 overflow-hidden">
 
           {/* Table Header */}
           <div className="grid grid-cols-3 gap-1 md:gap-4 p-2 md:p-6 bg-gradient-to-r from-gray-50 to-white border-b border-gray-200">
