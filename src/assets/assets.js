@@ -23,6 +23,7 @@ import twitter from "./twitter.png"
 import writing from "./writing.png"
 import top_Achivment from "./top_Achivment.png"
 import correct from "./correct.png"
+import footer_logo from "./footer_logo-transprant.png"
 
 const assets ={
     achivement,
@@ -32,6 +33,7 @@ const assets ={
     authentic,
     facebook,
     instgram,
+    footer_logo,
     linkdin,
     listing,
     navbarlogo,

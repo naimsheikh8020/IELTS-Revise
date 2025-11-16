@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div>
-            <img src={assets.navbarlogo} className='mb-4'/>
+            <img  src={assets.footer_logo} className='mb-2 w-3/4 '/>
             <p className="text-gray-600 text-sm mb-4">
               Your trusted partner for IELTS exam preparation with expert-created practice exam questions.
             </p>
