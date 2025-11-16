@@ -152,7 +152,7 @@ const Blog = () => {
         {otherPosts.map((post: BlogPost) => (
           <div
             key={post.id}
-            className="bg-white shadow-[0_0_20px_#0EA5E90E] rounded-xl overflow-hidden hover:shadow-[0_0_20px_#0EA5E91A]"
+            className="bg-white shadow-[0_0_20px_#0EA5E90E] rounded-xl overflow-hidden hover:shadow-[0_0_20px_#0EA5E91A] hover:outline hover:outline-blue-600 transition ease-in-out duration-100"
           >
             <img
               src={post.image}
