@@ -11,6 +11,8 @@ import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
 import ReadyToAchieve from "./pages/ReadyToAchieve";
 import Footer from "./pages/Footer";
 import SignIn from "./pages/SignIn"; // Import the SignIn component
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -42,6 +44,8 @@ const App = () => {
         
         {/* Sign In/Sign Up Page */}
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
       
       <Footer />
