@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { useNavigate } from 'react-router';
 
 interface FormData {
   name: string;
@@ -26,6 +27,18 @@ const Contact: React.FC = () => {
       [e.target.name]: e.target.value
     });
   };
+    const navigate = useNavigate();
+
+  const scrollToSection = (sectionId) => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
 
   return (
     <div className="min-h-screen mt-20 bg-gray-50 py-12 px-4">
@@ -85,7 +98,7 @@ const Contact: React.FC = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="w-full cursor-pointer bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Send Message
               </button>
@@ -151,7 +164,10 @@ const Contact: React.FC = () => {
               <p className="text-gray-600 text-sm mb-4">
                 Before reaching out, check our FAQ section for quick answers to common questions.
               </p>
-              <button className="w-full border-2 border-blue-600 text-blue-600 font-semibold py-2 rounded-lg hover:bg-blue-50 transition-colors">
+              <button
+               onClick={() => scrollToSection('frequently-asked-questions')} 
+               className="w-full cursor-pointer border-2 border-blue-600 text-blue-600 font-semibold py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                
                 View FAQ
               </button>
             </div>

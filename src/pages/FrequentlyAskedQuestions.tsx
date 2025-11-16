@@ -82,7 +82,7 @@ const FrequentlyAskedQuestions = () => {
   };
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="frequently-asked-questions">
       <div className="">
         
         {/* Header Section */}
