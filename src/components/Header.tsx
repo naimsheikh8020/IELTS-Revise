@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
 import { Link } from "react-scroll";
-import { Link as LinkRouter, useLocation } from "react-router-dom";
+import { Link as LinkRouter, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -9,6 +9,7 @@ const Header = () => {
   const [active, setActive] = useState("home");
 
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   const navItems = [
@@ -18,10 +19,29 @@ const Header = () => {
     { label: "Pricing", to: "pricing" },
   ];
 
+  // Function to handle navigation from other pages to home sections
+  const handleNavigateToSection = (sectionId: string) => {
+    if (!isHomePage) {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-        <img src={assets.navbarlog} alt="logo" className="h-10" />
+        <LinkRouter to='/'><img src={assets.navbarlogo} alt="logo" className="h-10" /></LinkRouter>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700 whitespace-nowrap">
@@ -45,13 +65,13 @@ const Header = () => {
                   Home
                 </Link>
               ) : (
-                <LinkRouter
+                <button
                   key={to}
-                  to="/"
+                  onClick={() => handleNavigateToSection("home")}
                   className="cursor-pointer hover:text-blue-600"
                 >
                   Home
-                </LinkRouter>
+                </button>
               )
             ) : (
               // OTHER NAV ITEMS
@@ -71,25 +91,34 @@ const Header = () => {
                   {label}
                 </Link>
               ) : (
-                <LinkRouter
+                <button
                   key={to}
-                  to="/"
+                  onClick={() => handleNavigateToSection(to)}
                   className="cursor-pointer hover:text-blue-600"
                 >
                   {label}
-                </LinkRouter>
+                </button>
               )
             )
           ))}
 
           {/* Blog Button using React Router */}
-          <LinkRouter to="/blog" className="hover:text-blue-600">
+          <LinkRouter 
+            to="/blog" 
+            className={`hover:text-blue-600 ${
+              location.pathname === "/blog" ? "text-blue-600 font-semibold" : ""
+            }`}
+          >
             Blog
           </LinkRouter>
 
-          <button className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl">
+          {/* Fixed Get Started Button */}
+          <LinkRouter 
+            to='/signin'
+            className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl"
+          >
             Get Started
-          </button>
+          </LinkRouter>
         </nav>
 
         {/* Mobile Icon */}
@@ -134,14 +163,16 @@ const Header = () => {
                   Home
                 </Link>
               ) : (
-                <LinkRouter
+                <button
                   key={to}
-                  to="/"
-                  onClick={() => setOpen(false)}
-                  className="cursor-pointer"
+                  onClick={() => {
+                    setOpen(false);
+                    handleNavigateToSection("home");
+                  }}
+                  className="cursor-pointer text-left"
                 >
                   Home
-                </LinkRouter>
+                </button>
               )
             ) : (
               isHomePage ? (
@@ -158,29 +189,37 @@ const Header = () => {
                   {label}
                 </Link>
               ) : (
-                <LinkRouter
+                <button
                   key={to}
-                  to="/"
-                  onClick={() => setOpen(false)}
-                  className="cursor-pointer"
+                  onClick={() => {
+                    setOpen(false);
+                    handleNavigateToSection(to);
+                  }}
+                  className="cursor-pointer text-left"
                 >
                   {label}
-                </LinkRouter>
+                </button>
               )
             )
           ))}
 
           <LinkRouter
             to="/blog"
-            className="cursor-pointer"
+            className={`cursor-pointer ${
+              location.pathname === "/blog" ? "text-blue-600 font-semibold" : ""
+            }`}
             onClick={() => setOpen(false)}
           >
             Blog
           </LinkRouter>
 
-          <button className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl mt-4">
-            Get Started
-          </button>
+          <LinkRouter
+           to='/signin'
+           className="bg-blue-600 cursor-pointer hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl mt-4"
+           onClick={() => setOpen(false)}
+           >
+          Get Started
+          </LinkRouter>
         </div>
       </div>
     </header>

@@ -6,7 +6,7 @@ import facebook from "./facebook.png"
 import instgram from "./instgram.png"
 import linkdin from "./Linkdin.png"
 import listing from "./listing.png"
-import navbarlog from "./navbarlogo.png"
+import navbarlogo from "./navbarlogo.png"
 import people from "./people.png"
 import reading from "./reading.png"
 import right_side_icon from "./right_side_icon.png"
@@ -24,6 +24,7 @@ import writing from "./writing.png"
 import top_Achivment from "./top_Achivment.png"
 import correct from "./correct.png"
 import featuredBlogImage from "./featured-blog.jpg"
+import footer_logo from "./footer_logo-transprant.png"
 
 const assets ={
     achivement,
@@ -33,9 +34,10 @@ const assets ={
     authentic,
     facebook,
     instgram,
+    footer_logo,
     linkdin,
     listing,
-    navbarlog,
+    navbarlogo,
     people,
     reading,
     right_side_icon,

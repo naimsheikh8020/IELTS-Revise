@@ -62,6 +62,7 @@ const Reviews = () => {
   ];
 
   return (
+    <>
     <div className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         {/* Header */}
@@ -134,8 +135,9 @@ const Reviews = () => {
           ))}
         </div>
       </div>
-      <ResultTable/>
     </div>
+    <ResultTable/>
+    </>
   );
 }
 

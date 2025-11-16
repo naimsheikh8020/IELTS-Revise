@@ -32,6 +32,7 @@ const PracticeCard = ({
         text-center
         gap-4
         cursor-pointer
+        
       "
     >
       {/* Icon */}

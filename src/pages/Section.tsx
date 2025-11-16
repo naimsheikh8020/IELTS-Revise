@@ -4,15 +4,15 @@ import assets from "../assets/assets";
 
 const Section = () => {
   return (
-    <div className="0">
-      <div className="bg-blue-50 p-8 sm:p-10 lg:p-14 rounded-xl">
+    <div className="0" id="ielts-practice">
+      <div className="bg-blue-50 p-8 sm:p-10 lg:p-14 rounded-xl " >
         <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-center">
           Complete IELTS Preparation
         </h2>
         <p className="text-gray-500 font-normal mt-3 sm:mt-4 text-sm sm:text-base text-center px-4">
           100,000 authentic exam-style questions across all four sections
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 p-6 py-12" >
           <IeltsCard
             icon={assets.listing}
             iconBg="bg-blue-100"

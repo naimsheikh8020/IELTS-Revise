@@ -61,7 +61,7 @@ const Student_Result = () => {
   ];
 
   return (
-    <div className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 sm:py-20 lg:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">

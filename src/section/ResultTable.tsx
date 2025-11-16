@@ -3,51 +3,22 @@ import { Check, X } from 'lucide-react';
 
 const ResultTable = () => {
   const features = [
-    {
-      label: 'Practice Questions',
-      revision: '20,000+',
-      traditional: '500-2,000'
-    },
-    {
-      label: 'Cost',
-      revision: 'From £16.58/month',
-      traditional: '£500-2,000'
-    },
-    {
-      label: 'Study Schedule',
-      revision: '24/7 Anytime Access',
-      traditional: 'Fixed Class Times'
-    },
-    {
-      label: 'Model Answers',
-      revision: 'Unlimited',
-      traditional: 'Limited'
-    },
-    {
-      label: 'Progress Tracking',
-      revision: 'Real-time Analytics',
-      traditional: 'Manual/Basic'
-    },
-    {
-      label: 'Location',
-      revision: 'Study Anywhere',
-      traditional: 'Physical Classroom'
-    },
-    {
-      label: 'All 4 Sections',
-      revision: 'Included',
-      traditional: 'Usually Extra Cost'
-    },
-    {
-      label: 'Money-back Guarantee',
-      revision: '7 Days',
-      traditional: 'Rarely Offered'
-    }
+    { label: 'Practice Questions', revision: '20,000+', traditional: '500-2,000' },
+    { label: 'Cost', revision: 'From £16.58/month', traditional: '£500-2,000' },
+    { label: 'Study Schedule', revision: '24/7 Anytime Access', traditional: 'Fixed Class Times' },
+    { label: 'Model Answers', revision: 'Unlimited', traditional: 'Limited' },
+    { label: 'Progress Tracking', revision: 'Real-time Analytics', traditional: 'Manual/Basic' },
+    { label: 'Location', revision: 'Study Anywhere', traditional: 'Physical Classroom' },
+    { label: 'All 4 Sections', revision: 'Included', traditional: 'Usually Extra Cost' },
+    { label: 'Money-back Guarantee', revision: '7 Days', traditional: 'Rarely Offered' }
   ];
 
   return (
-    <div className="min-h-screen  py-8 md:py-12 px-3 md:px-4 mt-12">
+    <div className="min-h-screen ">
+
+      {/* CENTER CONTENT (TABLE + HEADER) */}
       <div className="max-w-4xl mx-auto">
+
         {/* Header */}
         <div className="text-center mb-6 md:mb-8">
           <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3">
@@ -60,15 +31,20 @@ const ResultTable = () => {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-xl md:rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-xl md:rounded-2xl md:px-6 p-6 shadow-lg border border-gray-200 overflow-hidden">
+
           {/* Table Header */}
           <div className="grid grid-cols-3 gap-1 md:gap-4 p-2 md:p-6 bg-gradient-to-r from-gray-50 to-white border-b border-gray-200">
-            <div className="text-gray-700 font-semibold text-[10px] sm:text-xs md:text-base flex items-center">Feature</div>
+            <div className="text-gray-700 font-semibold text-[10px] sm:text-xs md:text-base flex items-center">
+              Feature
+            </div>
+
             <div className="flex justify-center items-center">
               <button className="px-1 sm:px-2 md:px-6 py-1 sm:py-1.5 md:py-2.5 bg-blue-600 text-white font-semibold rounded-md md:rounded-lg shadow-md hover:bg-blue-700 transition-colors text-[9px] sm:text-xs md:text-base leading-tight">
                 IELTS<br className="md:hidden" />Revision
               </button>
             </div>
+
             <div className="flex justify-center items-center">
               <button className="px-1 sm:px-2 md:px-6 py-1 sm:py-1.5 md:py-2.5 bg-white text-blue-600 font-semibold rounded-md md:rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors text-[9px] sm:text-xs md:text-base leading-tight">
                 Traditional<br className="md:hidden" />Courses
@@ -83,31 +59,45 @@ const ResultTable = () => {
                 key={index}
                 className="grid grid-cols-3 gap-1 md:gap-4 p-2 md:p-6 hover:bg-blue-50/30 transition-colors"
               >
-                <div className="text-gray-700 font-medium flex items-center text-[9px] sm:text-xs md:text-base leading-tight pr-1">
+                <div className="text-gray-700 font-medium flex items-center text-[9px] sm:text-xs md:text-base leading-tight">
                   {feature.label}
                 </div>
-                
+
                 <div className="flex justify-center items-center">
-                  <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-1 md:gap-2 px-1 sm:px-2 md:px-4 py-1 sm:py-1.5 md:py-2 bg-blue-50 rounded-md md:rounded-lg border border-blue-200 w-full justify-center">
-                    <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-5 md:h-5 text-blue-600 flex-shrink-0" />
+                  <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-1 md:gap-2 px-1 sm:px-2 md:px-4 py-1 sm:py-1.5 md:py-2 bg-blue-50 rounded-md border border-blue-200 w-full justify-center">
+                    <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-5 md:h-5 text-blue-600" />
                     <span className="text-blue-700 font-medium text-[8px] sm:text-[10px] md:text-sm leading-tight text-center">
                       {feature.revision}
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="flex justify-center items-center">
-                  <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-1 md:gap-2 px-1 sm:px-2 md:px-4 py-1 sm:py-1.5 md:py-2 bg-red-50 rounded-md md:rounded-lg border border-red-200 w-full justify-center">
-                    <X className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-5 md:h-5 text-red-600 flex-shrink-0" />
+                  <div className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-1 md:gap-2 px-1 sm:px-2 md:px-4 py-1 sm:py-1.5 md:py-2 bg-red-50 rounded-md border border-red-200 w-full justify-center">
+                    <X className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-5 md:h-5 text-red-600" />
                     <span className="text-red-700 font-medium text-[8px] sm:text-[10px] md:text-sm leading-tight text-center">
                       {feature.traditional}
                     </span>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>
         </div>
+      </div> 
+      <div className="mt-8 md:mt-12 w-full bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg p-6 md:p-18 text-center l">
+        <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">
+          Save £1,800+ Per Year
+        </h2>
+
+        <p className="text-white/90 text-sm md:text-base mb-4 md:mb-6">
+          Traditional courses: <span className="font-bold">£2,000+</span> | IELTS Revision Premium: <span className="font-bold">£99/year</span>
+        </p>
+
+        <button className="px-6 md:px-8 py-2.5 md:py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-50 transition-colors text-sm md:text-base">
+          Start Saving Today - Get Premium
+        </button>
       </div>
     </div>
   );

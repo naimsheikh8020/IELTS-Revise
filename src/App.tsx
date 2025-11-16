@@ -10,13 +10,18 @@ import Blog from "./pages/Blog";
 import FrequentlyAskedQuestions from "./pages/FrequentlyAskedQuestions";
 import ReadyToAchieve from "./pages/ReadyToAchieve";
 import Footer from "./pages/Footer";
+import SignIn from "./pages/SignIn"; // Import the SignIn component
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Privicy_Policy from "./pages/Privicy_Policy";
+import Terms_of_Service from "./pages/Terms_of_Service";
 
 const App = () => {
   return (
     <div>
-    <div className="">
+      <div className="">
         <Header />
-    </div>
+      </div>
 
       <Routes>
         {/* Landing Page (full scrollable sections) */}
@@ -39,7 +44,15 @@ const App = () => {
 
         {/* Separate Blog Page */}
         <Route path="/blog" element={<Blog />} />
+        
+        {/* Sign In/Sign Up Page */}
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/privacy" element={<Privicy_Policy/>}/>
+        <Route path="/terms" element={<Terms_of_Service/>}/>
       </Routes>
+      
       <Footer />
     </div>
   );
