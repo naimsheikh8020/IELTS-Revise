@@ -1,80 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import assets from "../assets/assets";
+import { Link } from "react-router";
 
 const SignIn = () => {
-  const [activeTab, setActiveTab] = useState<'signin' | 'signup'>('signin');
+  const [activeTab, setActiveTab] = useState<"signin" | "signup">("signin");
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [showOtpVerification, setShowOtpVerification] = useState(false);
-  
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [otp, setOtp] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [otp, setOtp] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
   const handleSubmit = () => {
-    if (activeTab === 'signin') {
-      console.log('Signing in with:', email, password);
+    if (activeTab === "signin") {
+      console.log("Signing in with:", email, password);
     } else {
-      console.log('Signing up with:', email, password, confirmPassword);
+      console.log("Signing up with:", email, password, confirmPassword);
     }
   };
 
   const handleSendOtp = () => {
-    console.log('Sending OTP to:', email);
+    console.log("Sending OTP to:", email);
     setShowOtpVerification(true);
   };
 
   const handleResetPassword = () => {
-    console.log('Resetting password with OTP:', otp);
+    console.log("Resetting password with OTP:", otp);
     setShowForgotPassword(false);
     setShowOtpVerification(false);
-    setActiveTab('signin');
+    setActiveTab("signin");
   };
 
   const handleBackToSignIn = () => {
     setShowForgotPassword(false);
     setShowOtpVerification(false);
-    setEmail('');
-    setOtp('');
-    setNewPassword('');
-    setConfirmNewPassword('');
+    setEmail("");
+    setOtp("");
+    setNewPassword("");
+    setConfirmNewPassword("");
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-blue-600 text-white px-6 py-3 rounded">
-            <div className="text-2xl font-bold">IELTS</div>
-            <div className="text-xs">REVISION</div>
-          </div>
+        <div className="flex justify-center mb-4">
+          <img src={assets.navbarlogo} />
         </div>
 
         {/* Title */}
         <h1 className="text-3xl font-bold text-center mb-2">IELTS REVISION</h1>
         <p className="text-gray-600 text-center mb-6">
-          {showForgotPassword 
-            ? 'Reset your password' 
-            : 'Sign in to access practice exam questions'}
+          {showForgotPassword
+            ? "Reset your password"
+            : "Sign in to access practice exam questions"}
         </p>
 
         {/* Toggle Buttons - Only show when not in forgot password mode */}
         {!showForgotPassword && (
           <div className="flex mb-6 bg-gray-200 rounded">
             <button
-              onClick={() => setActiveTab('signup')}
+              onClick={() => setActiveTab("signup")}
               className={`flex-1 py-2 rounded transition-colors font-medium ${
-                activeTab === 'signup' ? 'bg-white shadow text-gray-900' : 'bg-transparent text-gray-600'
+                activeTab === "signup"
+                  ? "bg-white shadow text-gray-900"
+                  : "bg-transparent text-gray-600"
               }`}
             >
               Sign Up
             </button>
             <button
-              onClick={() => setActiveTab('signin')}
+              onClick={() => setActiveTab("signin")}
               className={`flex-1 py-2 rounded transition-colors font-medium ${
-                activeTab === 'signin' ? 'bg-white shadow text-gray-900' : 'bg-transparent text-gray-600'
+                activeTab === "signin"
+                  ? "bg-white shadow text-gray-900"
+                  : "bg-transparent text-gray-600"
               }`}
             >
               Sign In
@@ -109,7 +112,7 @@ const SignIn = () => {
                 </button>
 
                 <div className="text-center">
-                  <button 
+                  <button
                     onClick={handleBackToSignIn}
                     className="text-blue-600 hover:underline"
                   >
@@ -168,7 +171,7 @@ const SignIn = () => {
                 </button>
 
                 <div className="text-center">
-                  <button 
+                  <button
                     onClick={handleBackToSignIn}
                     className="text-blue-600 hover:underline"
                   >
@@ -210,7 +213,7 @@ const SignIn = () => {
             </div>
 
             {/* Confirm Password (only for Sign Up) */}
-            {activeTab === 'signup' && (
+            {activeTab === "signup" && (
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2">
                   Confirm Password
@@ -230,13 +233,13 @@ const SignIn = () => {
               onClick={handleSubmit}
               className="w-full bg-blue-600 text-white py-3 rounded font-medium hover:bg-blue-700 transition-colors mb-4"
             >
-              {activeTab === 'signin' ? 'Sign In' : 'Sign Up'}
+              {activeTab === "signin" ? "Sign In" : "Sign Up"}
             </button>
 
             {/* Forgot Password (only for Sign In) */}
-            {activeTab === 'signin' && (
+            {activeTab === "signin" && (
               <div className="text-center mb-4">
-                <button 
+                <button
                   onClick={() => setShowForgotPassword(true)}
                   className="text-blue-600 hover:underline"
                 >
@@ -247,9 +250,9 @@ const SignIn = () => {
 
             {/* Back to Home */}
             <div className="text-center">
-              <a href="/" className="text-blue-600 hover:underline">
+              <Link to="/" className="text-blue-600 hover:underline">
                 Back to Home
-              </a>
+              </Link>
             </div>
           </div>
         )}

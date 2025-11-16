@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-        <LinkRouter to='/'><img src={assets.navbarlog} alt="logo" className="h-10" /></LinkRouter>
+        <LinkRouter to='/'><img src={assets.navbarlogo} alt="logo" className="h-10" /></LinkRouter>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700 whitespace-nowrap">
@@ -87,9 +87,13 @@ const Header = () => {
             Blog
           </LinkRouter>
 
-          <button className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl">
+          {/* Fixed Get Started Button */}
+          <LinkRouter 
+            to='/signin'
+            className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl"
+          >
             Get Started
-          </button>
+          </LinkRouter>
         </nav>
 
         {/* Mobile Icon */}
@@ -178,9 +182,13 @@ const Header = () => {
             Blog
           </LinkRouter>
 
-          <button className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl mt-4">
-            Get Started
-          </button>
+          <LinkRouter
+           to='/signin'
+           className="bg-blue-600 cursor-pointer hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl mt-4"
+           onClick={() => setOpen(false)}
+           >
+          Get Started
+          </LinkRouter>
         </div>
       </div>
     </header>
