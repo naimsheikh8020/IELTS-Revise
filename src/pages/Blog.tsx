@@ -1,114 +1,115 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { toast } from "sonner";
-import Header from "../components/Header";
-import Footer from "./Footer";
 
-const blogPosts = [
+
+// Fake JSON data
+const blogData = [
   {
     id: 1,
     title: "10 Essential Tips to Achieve Band 8+ in IELTS Writing",
-    description:
-      "Master the art of IELTS writing with these proven strategies used by high-scoring students. Learn how to structure your essays, improve vocabulary, and avoid common mistakes.",
-    category: "Writing",
-    readTime: "8 min read",
-    date: "15 Jan 2025",
+    date: "04 July, 2024",
     image:
-      "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80",
-    url: "/blog/writing-tips",
+      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80",
+    description:
+      "Expert writing strategies to help you achieve your target band score.",
+    featured: true,
   },
   {
     id: 2,
-    title: "IELTS Listening: How to Improve Your Score in 30 Days",
-    description:
-      "Discover the techniques top students use to excel in IELTS Listening. From note-taking strategies to understanding different accents, this guide covers everything.",
-    category: "Listening",
-    readTime: "6 min read",
-    date: "12 Jan 2025",
+    title: "Understanding IELTS Band Scores: What Examiners Look For",
+    date: "04 July, 2024",
     image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80",
-    url: "/blog/listening-improvement",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+    featured: false,
   },
   {
     id: 3,
     title: "Complete Guide to IELTS Reading: Time Management & Strategy",
-    description:
-      "Learn how to tackle IELTS Reading passages efficiently. Master skimming, scanning, and answering techniques that will boost your score significantly.",
-    category: "Reading",
-    readTime: "10 min read",
-    date: "10 Jan 2025",
+    date: "04 July, 2024",
     image:
-      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
-    url: "/blog/reading-guide",
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+    featured: false,
   },
   {
     id: 4,
-    title: "IELTS Speaking: Confident Communication for Band 7.5+",
-    description:
-      "Build confidence and fluency in your IELTS speaking test. Includes sample questions, model answers, and tips from IELTS examiners.",
-    category: "Speaking",
-    readTime: "7 min read",
-    date: "8 Jan 2025",
+    title: "IELTS Listening: How to Improve Your Score in 30 Days",
+    date: "04 July, 2024",
     image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80",
-    url: "/blog/speaking-confidence",
+      "https://images.unsplash.com/photo-1498079022511-d15614cb1c02?auto=format&fit=crop&w=800&q=80",
+    featured: false,
+  },
+  {
+    id: 7,
+    title: "IELTS Listening: How to Improve Your Score in 30 Days",
+    date: "04 July, 2024",
+    image:
+      "https://images.unsplash.com/photo-1498079022511-d15614cb1c02?auto=format&fit=crop&w=800&q=80",
+    featured: false,
   },
   {
     id: 5,
     title: "Understanding IELTS Band Scores: What Examiners Look For",
-    description:
-      "Demystify the IELTS scoring system. Learn exactly what examiners assess in each section and how to meet the criteria for your target band score.",
-    category: "General",
-    readTime: "5 min read",
-    date: "5 Jan 2025",
+    date: "04 July, 2024",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
-    url: "/blog/band-scores",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+    featured: false,
   },
+  {
+    id: 6,
+    title: "Complete Guide to IELTS Reading: Time Management & Strategy",
+    date: "04 July, 2024",
+    image:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "Complete Guide to IELTS Reading: Time Management & Strategy",
+    date: "04 July, 2024",
+    image:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80",
+    featured: false,
+  },
+  {
+    id: 10,
+    title: "IELTS Listening: How to Improve Your Score in 30 Days",
+    date: "04 July, 2024",
+    image:
+      "https://images.unsplash.com/photo-1498079022511-d15614cb1c02?auto=format&fit=crop&w=800&q=80",
+    featured: false,
+  },
+  {
+    id: 8,
+    title: "Understanding IELTS Band Scores: What Examiners Look For",
+    date: "04 July, 2024",
+    image:
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+    featured: false,
+  },
+  
 ];
 
+// Define the blog post type
+type BlogPost = {
+  id: number;
+  title: string;
+  date: string;
+  image: string;
+  description?: string;
+  featured: boolean;
+};
+
+// Modern functional component
 const Blog = () => {
-  const navigate = useNavigate();
-
-  const handlePostClick = (url: string) => {
-    navigate(url);
-  };
-
-  useEffect(() => {
-    // Add BlogPosting schema markup for SEO
-    const blogSchema = {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      name: "IELTS Revision Blog",
-      description:
-        "Expert IELTS preparation tips, strategies, and insights to help achieve your target band score",
-      url: "https://ieltsrevision.com/blog",
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = "blog-schema";
-    script.text = JSON.stringify(blogSchema);
-    document.head.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById("blog-schema");
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
+  const featuredPost = blogData.find((post) => post.featured);
+  const otherPosts = blogData.filter((post) => !post.featured);
 
   return (
-    <div className="min-h-screen">
-      <main className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
+    <div className="w-full py-28 px-6 max-w-7xl mx-auto font-sans">
+      {/* Header */}
+      <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               IELTS Preparation{" "}
-              <span className="bg-clip-text text-transparent bg-linear-to-br from-blue-600 to-green-500">
+              {/* <span className="bg-clip-text text-transparent bg-linear-to-br from-blue-600 to-green-500"> */}
+              <span className="bg-clip-text text-transparent bg-blue-600">
                 Blog
               </span>
             </h1>
@@ -118,55 +119,58 @@ const Blog = () => {
             </p>
           </div>
 
-          {/* Featured Post */}
-
-          <div>
-            <div>
-              <img src="" alt="" />
-            </div>
-            <div>
-              <div className="flex">
-                <span>Featured</span>
-                <div className="flex">
-                  <img src="" alt="" />
-                  <span>date</span>
-                </div>
-              </div>
-              <div>
-                <h2>10 Essential Tips to Achieve Band 8+ in IELTS Writing</h2>
-                <p>asdkfasdfaskldhfashdkfhasdkjfhjk</p>
-
-              </div>
-              <div className="flex">
-                <div className="flex">
-                  <img src="" alt="" />
-                  <span>8 min read</span>
-                </div>
-                <div>
-                  <button>asdfasdfasd</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-20 text-center bg-linear-to-br  from-blue-600 to-green-500 rounded-2xl p-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
-              Ready to Start Practicing?
-            </h2>
-            <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
-              Put these tips into action with 100,000+ practice questions across
-              all IELTS sections
-            </p>
-            <button
-              className="text-lg bg-blue-600 text-white py-2 px-6 rounded-lg font-medium "
-              onClick={() => navigate("/auth")}
-            >
-              Start Free Trial Now
-            </button>
+      {/* Featured Post */}
+      {featuredPost && (
+        <div className="mt-10 lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-white rounded-xl  shadow-[0_0_20px_#0EA5E91A]">
+          <img
+            src={featuredPost.image}
+            alt={featuredPost.title}
+            className="w-full h-64 lg:h-80 object-cover rounded-lg rounded-r-none"
+          />
+          <div className="p-5 md:p-8">
+            <p className="text-gray-500 text-sm">{featuredPost.date}</p>
+            <h2 className="text-2xl font-semibold mt-2">{featuredPost.title}</h2>
+            {featuredPost.description && (
+              <p className="mt-2 text-gray-700">{featuredPost.description}</p>
+            )}
+            <a href="#" className="text-blue-600 font-medium text-sm block mt-3">
+              Read the full article
+            </a>
           </div>
         </div>
-      </main>
+      )}
+
+      {/* Recent Blogs */}
+      <div className="mt-16 flex items-center justify-between">
+        <h2 className="text-2xl lg:text-4xl font-bold lg:mb-4 ">Recent blogs</h2>
+        <a href="#" className="text-blue-600 text-sm font-medium hover:underline">
+          See all Blog →
+        </a>
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-10">
+        {otherPosts.map((post: BlogPost) => (
+          <div
+            key={post.id}
+            className="bg-white shadow-[0_0_20px_#0EA5E90E] rounded-xl overflow-hidden hover:shadow-[0_0_20px_#0EA5E91A]"
+          >
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-5">
+              <h3 className="font-semibold text-lg leading-snug">{post.title}</h3>
+              <div className="flex justify-between items-center mt-5">
+                <p className="text-gray-500 text-sm mt-1">{post.date}</p>
+              <a href="#" className="text-blue-600 text-sm font-medium block mt-2">
+                Read the full article
+              </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
