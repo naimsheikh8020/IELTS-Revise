@@ -15,6 +15,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privicy_Policy from "./pages/Privicy_Policy";
 import Terms_of_Service from "./pages/Terms_of_Service";
+import BlogDetails from "./pages/BlogDetails";
+import AllBlogs from "./pages/AllBlogs";
 
 const App = () => {
   return (
@@ -44,6 +46,8 @@ const App = () => {
 
         {/* Separate Blog Page */}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetails/>} />
+        <Route path="/blogs" element={<AllBlogs/>} />
         
         {/* Sign In/Sign Up Page */}
         <Route path="/signin" element={<SignIn />} />
