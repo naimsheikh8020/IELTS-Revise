@@ -15,8 +15,8 @@ const Reviews = () => {
       image: assets.student
     },
     {
-      name: "Mohammed Ali",
-      location: "UAE Student",
+      name: "Olivia",
+      location: "UK Student",
       beforeScore: "6.0",
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
@@ -24,8 +24,8 @@ const Reviews = () => {
       image: assets.student2
     },
     {
-      name: "Emma Chen",
-      location: "China Student",
+      name: "Avi Singh",
+      location: "Indian Student",
       beforeScore: "7.0",
       afterScore: "8.5",
       timeAgo: "1 month ago",
@@ -33,7 +33,7 @@ const Reviews = () => {
       image: assets.student3 
     },
     {
-      name: "Raj Patel",
+      name: "Rani Patel",
       location: "India Student",
       beforeScore: "5.5",
       afterScore: "7.0",
@@ -48,16 +48,16 @@ const Reviews = () => {
       afterScore: "8.0",
       timeAgo: "2 months ago",
       testimonial: "Realistic exam questions. Great practice for all sections. Highly recommend!",
-      image: assets.student4
+      image: assets.student5
     },
     {
       name: "James Wilson",
-      location: "Canada Student",
+      location: "German Student",
       beforeScore: "6.0",
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
       testimonial: "Authentic questions. Clear explanations. Got Band 7.5 exactly as needed!",
-      image: assets.student
+      image: assets.student6
     }
   ];
 
