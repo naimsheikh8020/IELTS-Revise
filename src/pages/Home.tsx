@@ -30,7 +30,7 @@ const Home = () => {
             Achieve your target band score.
           </p>
           <p className="text-sm sm:text-base md:text-xl">
-            Join 15,000+ students who improved their scores by an average of 1.5
+            Join 10,000+ students who improved their scores by an average of 1.5
             bands
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-6">
@@ -74,7 +74,7 @@ const Home = () => {
               <p className="text-xs sm:text-sm font-semibold text-white px-3 sm:px-4 py-2 rounded-xl bg-blue-600 inline">Most Popular</p>
               <h2 className="text-xl sm:text-2xl font-bold text-black mt-4 sm:mt-6">Premium</h2>
               <p className="text-2xl sm:text-3xl font-extrabold text-blue-600 mt-2">
-                £199 <span className="text-sm sm:text-base font-normal text-gray-500">/year</span>
+                £99 <span className="text-sm sm:text-base font-normal text-gray-500">/year</span>
               </p>
               <p className="text-xs sm:text-sm text-gray-500 mt-1">£16.58/month • Save £100</p>
             </div>

@@ -79,6 +79,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link 
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   to="/about" 
                   className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
                 >
@@ -113,35 +114,42 @@ const Footer = () => {
           </div>
 
           {/* Support */}
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  to="/contact" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/privacy" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/terms" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
+
+<div>
+  <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
+  <ul className="space-y-2">
+    <li>
+      <Link 
+        to="/contact"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+      >
+        Contact Us
+      </Link>
+    </li>
+
+    <li>
+      <Link 
+        to="/privacy"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+      >
+        Privacy Policy
+      </Link>
+    </li>
+
+    <li>
+      <Link 
+        to="/terms"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+      >
+        Terms of Service
+      </Link>
+    </li>
+  </ul>
+</div>
+
         </div>
 
         {/* Bottom Copyright */}

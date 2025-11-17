@@ -10,7 +10,7 @@ const Section = () => {
           Complete IELTS Preparation
         </h2>
         <p className="text-gray-500 font-normal mt-3 sm:mt-4 text-sm sm:text-base text-center px-4">
-          100,000 authentic exam-style questions across all four sections
+          20,000 authentic exam-style questions across all four sections
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 p-6 py-12" >
           <IeltsCard
@@ -19,7 +19,7 @@ const Section = () => {
             title="Listening"
             description="Practice with authentic audio recordings and develop your listening comprehension skills."
             points={[
-              "25,000 questions",
+              "5,000 questions",
               "Varied accents",
               "All question types",
             ]}
@@ -31,7 +31,7 @@ const Section = () => {
             title="Reading"
             description="Enhance your reading speed and accuracy with passages from books, magazines."
             points={[
-              "25,000 questions",
+              "5,000 questions",
               "Authentic texts",
               "Academic & General",
             ]}
@@ -41,14 +41,14 @@ const Section = () => {
             iconBg="bg-purple-100"
             title="Writing"
             description="Master essay writing and task completion with detailed sample answers and feedback."
-            points={["25,000 questions", "Task 1 & Task 2", "Model answers"]}
+            points={["5,000 questions", "Task 1 & Task 2", "Model answers"]}
           />
           <IeltsCard
             icon={assets.speaking}
             iconBg="bg-orange-100"
             title="Speaking"
             description="Build confidence with sample questions for all three parts of the speaking test and feedback."
-            points={["25,000 questions", "Part 1, 2 & 3", "Sample responses"]}
+            points={["5,000 questions", "Part 1, 2 & 3", "Sample responses"]}
           />
         </div>
       </div>

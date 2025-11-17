@@ -21,7 +21,7 @@ const Reviews = () => {
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
       testimonial: "Perfect exam practice. The questions are just like real IELTS. Got my target score!",
-      image: assets.student
+      image: assets.student2
     },
     {
       name: "Emma Chen",
@@ -30,7 +30,7 @@ const Reviews = () => {
       afterScore: "8.5",
       timeAgo: "1 month ago",
       testimonial: "Best practice platform. Questions are authentic. Instant feedback helped me improve fast.",
-      image: assets.student
+      image: assets.student3 
     },
     {
       name: "Raj Patel",
@@ -39,7 +39,7 @@ const Reviews = () => {
       afterScore: "7.0",
       timeAgo: "1 week ago",
       testimonial: "Practice questions prepared me perfectly. Got Band 7.0 on first attempt!",
-      image: assets.student
+      image: assets.student4
     },
     {
       name: "Maria Garcia",
@@ -48,7 +48,7 @@ const Reviews = () => {
       afterScore: "8.0",
       timeAgo: "2 months ago",
       testimonial: "Realistic exam questions. Great practice for all sections. Highly recommend!",
-      image: assets.student
+      image: assets.student4
     },
     {
       name: "James Wilson",

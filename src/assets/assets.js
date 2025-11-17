@@ -60,13 +60,13 @@ export default assets
 export const cards = [
     {
       icon: assets.people,
-      number: 120,
+      number: 500,
       title: "Students Enrolled",
       description: "Total number of active students",
     },
     {
       icon: assets.successrate,
-      number: "100%",
+      number: "92%",
       title: "Success Rate",
       description: "Achieve target scores",
     },

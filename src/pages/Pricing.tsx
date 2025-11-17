@@ -119,7 +119,7 @@ const Pricing = () => {
       "period": "/ per month",
       "description": "Focused IELTS practice",
       "features": [
-        "25,000 practice questions",
+        "10,000 practice questions",
         "All 4 IELTS sections covered",
         "Basic answer explanations",
         "Progress tracking",
@@ -136,7 +136,7 @@ const Pricing = () => {
       "period": "/ Life time",
       "description": "Complete IELTS mastery - Band 7-9",
       "features": [
-        "100,000+ practice questions",
+        "20,000+ practice questions",
         "All 4 IELTS sections covered",
         "Detailed answer explanations",
         "Model answers for writing & speaking",

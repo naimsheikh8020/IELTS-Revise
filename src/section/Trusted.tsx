@@ -33,11 +33,11 @@ const Trusted = () => {
         <div className="my-4 flex flex-col items-center text-center gap-2">
   {/* Stars */}
   <div className="flex text-orange-500 gap-1">
-    <Star />
-    <Star />
-    <Star />
-    <Star />
-    <Star />
+    <Star fill="currentColor" stroke="none"/>
+    <Star fill="currentColor" stroke="none"/>
+    <Star fill="currentColor" stroke="none"/>
+    <Star fill="currentColor" stroke="none"/>
+    <Star fill="currentColor" stroke="none"/>
   </div>
 
   {/* Text */}

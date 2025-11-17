@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-        <LinkRouter to='/'><img src={assets.navbarlogo} alt="logo" className="h-10" /></LinkRouter>
+        <LinkRouter to='/'><img src={assets.footer_logo} alt="logo"   className="w-1/5"/></LinkRouter>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700 whitespace-nowrap">

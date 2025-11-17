@@ -15,7 +15,7 @@ const Start_Practicing = () => {
         icon={assets.listing}
         title="Listening"
         subtitle="30-minute audio tests"
-        questionsCount="25,000"
+        questionsCount="5,000"
         onClick={() => console.log("Listening clicked")}
       />
 
@@ -23,21 +23,21 @@ const Start_Practicing = () => {
         icon={assets.reading}
         title="Reading"
         subtitle="60-minute passages"
-        questionsCount="30,000"
+        questionsCount="5,000"
         onClick={() => console.log("Reading clicked")}
       />
       <PracticeCard
         icon={assets.writing}
         title="Writing"
         subtitle="Task 1 & Task 2"
-        questionsCount="15,000+ Question"
+        questionsCount="5,000+ Question"
         onClick={() => console.log("Reading clicked")}
       />
       <PracticeCard
         icon={assets.speaking}
         title="Speaking"
         subtitle="Part 1, 2 & 3"
-        questionsCount="30,000+ Question"
+        questionsCount="5,000+ Question"
         onClick={() => console.log("Reading clicked")}
       />
 
