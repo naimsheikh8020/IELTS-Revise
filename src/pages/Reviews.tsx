@@ -15,8 +15,8 @@ const Reviews = () => {
       image: assets.student
     },
     {
-      name: "Mohammed Ali",
-      location: "UAE Student",
+      name: "Olivia",
+      location: "UK Student",
       beforeScore: "6.0",
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
@@ -48,7 +48,7 @@ const Reviews = () => {
       afterScore: "8.0",
       timeAgo: "2 months ago",
       testimonial: "Realistic exam questions. Great practice for all sections. Highly recommend!",
-      image: assets.student4
+      image: assets.student5
     },
     {
       name: "James Wilson",
@@ -57,7 +57,7 @@ const Reviews = () => {
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
       testimonial: "Authentic questions. Clear explanations. Got Band 7.5 exactly as needed!",
-      image: assets.student
+      image: assets.student6
     }
   ];
 

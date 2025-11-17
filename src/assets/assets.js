@@ -17,6 +17,8 @@ import student from "./student.png"
 import student2 from "./stundet2.png"
 import student3 from "./student3.png"
 import student4 from "./student4.png"
+import student5 from "./student5.jpg"
+import student6 from "./student6.jpg"
 import time from "./time.png"
 import successrate from "./success_rate.png"
 import twitter from "./twitter.png"
@@ -48,6 +50,8 @@ const assets ={
     student2,
     student3,
     student4,
+    student5,
+    student6,
     time,
     successrate,
     twitter,
