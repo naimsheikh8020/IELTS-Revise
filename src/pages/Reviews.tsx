@@ -24,8 +24,8 @@ const Reviews = () => {
       image: assets.student2
     },
     {
-      name: "Emma Chen",
-      location: "China Student",
+      name: "Avi Singh",
+      location: "Indian Student",
       beforeScore: "7.0",
       afterScore: "8.5",
       timeAgo: "1 month ago",
@@ -33,7 +33,7 @@ const Reviews = () => {
       image: assets.student3 
     },
     {
-      name: "Raj Patel",
+      name: "Rani Patel",
       location: "India Student",
       beforeScore: "5.5",
       afterScore: "7.0",
@@ -52,7 +52,7 @@ const Reviews = () => {
     },
     {
       name: "James Wilson",
-      location: "Canada Student",
+      location: "German Student",
       beforeScore: "6.0",
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
