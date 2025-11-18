@@ -28,6 +28,9 @@ const Blog = () => {
 
       {/* Featured Post */}
       {featuredPost && (
+        <Link to={`/blog/${featuredPost.id}`} className="">
+             
+            
         <div className="mt-10 lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-white rounded-xl  shadow-[0_0_20px_#0EA5E91A]">
           <img
             src={featuredPost.image}
@@ -45,6 +48,7 @@ const Blog = () => {
             </Link>
           </div>
         </div>
+        </Link>
       )}
 
       {/* Recent Blogs */}
@@ -57,6 +61,9 @@ const Blog = () => {
 
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-10">
         {otherPosts.map((post: BlogPost) => (
+          <Link to={`/blog/${post.id}`} className="">
+                  
+               
           <div
             key={post.id}
             className="bg-white shadow-[0_0_20px_#0EA5E90E] rounded-xl overflow-hidden hover:shadow-[0_0_20px_#0EA5E91A] hover:outline hover:outline-blue-600 transition ease-in-out duration-100"
@@ -76,6 +83,7 @@ const Blog = () => {
               </div>
             </div>
           </div>
+           </Link>
         ))}
       </div>
     </div>
