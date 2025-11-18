@@ -8,9 +8,15 @@ const AllBlogs = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {blogData.map((post) => (
+          <Link
+                to={`/blog/${post.id}`}
+                className=""
+              >
+                
+             
           <div
             key={post.id}
-            className="bg-white rounded-xl shadow-[0_0_20px_#0EA5E90E] hover:shadow-[0_0_20px_#0EA5E91A] transition"
+            className="bg-white rounded-xl shadow-[0_0_20px_#0EA5E90E] hover:shadow-[0_0_20px_#0EA5E91A]  hover:outline hover:outline-blue-200"
           >
             <img
               src={post.image}
@@ -32,6 +38,7 @@ const AllBlogs = () => {
               </div>
             </div>
           </div>
+           </Link>
         ))}
       </div>
     </div>
