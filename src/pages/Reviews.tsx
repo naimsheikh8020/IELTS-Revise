@@ -6,8 +6,8 @@ import ResultTable from '../section/ResultTable';
 const Reviews = () => {
   const students = [
     {
-      name: "Sarah Johnson",
-      location: "UK Student",
+      name: "Rajesh Shah",
+      location: "Indian Student",
       beforeScore: "6.5",
       afterScore: "8.0",
       timeAgo: "2 weeks ago",
@@ -15,8 +15,8 @@ const Reviews = () => {
       image: assets.student
     },
     {
-      name: "Olivia",
-      location: "UK Student",
+      name: "Yin Wong",
+      location: "Chinese Student",
       beforeScore: "6.0",
       afterScore: "7.5",
       timeAgo: "3 weeks ago",
@@ -33,8 +33,8 @@ const Reviews = () => {
       image: assets.student3 
     },
     {
-      name: "Rani Patel",
-      location: "India Student",
+      name: "Melokuhle Nkosi",
+      location: "South African Student",
       beforeScore: "5.5",
       afterScore: "7.0",
       timeAgo: "1 week ago",
@@ -43,7 +43,7 @@ const Reviews = () => {
     },
     {
       name: "Maria Garcia",
-      location: "Spain Student",
+      location: "Spanish Student",
       beforeScore: "6.5",
       afterScore: "8.0",
       timeAgo: "2 months ago",
@@ -51,7 +51,7 @@ const Reviews = () => {
       image: assets.student5
     },
     {
-      name: "James Wilson",
+      name: "Felix Schneider",
       location: "German Student",
       beforeScore: "6.0",
       afterScore: "7.5",
