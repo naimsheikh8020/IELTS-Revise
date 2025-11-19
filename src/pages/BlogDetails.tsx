@@ -1,9 +1,15 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { blogData } from "../assets/BlogData";
 
 const BlogDetails = () => {
   const { id } = useParams();
   const blog = blogData.find((b) => b.id === Number(id));
+
+  // 🔥 Scroll to top whenever this page opens
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (!blog) {
     return <div className="p-40 text-center text-red-600">Blog not found</div>;
