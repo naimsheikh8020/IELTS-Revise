@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import assets from "../assets/assets";
 import { Link } from "react-router";
 
@@ -13,6 +13,10 @@ const SignIn = () => {
   const [otp, setOtp] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
+
+  useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
   const handleSubmit = () => {
     if (activeTab === "signin") {

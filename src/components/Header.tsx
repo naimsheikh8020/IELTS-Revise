@@ -214,7 +214,7 @@ const Header = () => {
           </LinkRouter>
 
           <LinkRouter
-           to='/signin'
+           to='/signin' 
            className="bg-blue-600 cursor-pointer hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl mt-4"
            onClick={() => setOpen(false)}
            >

@@ -17,6 +17,7 @@ import Privicy_Policy from "./pages/Privicy_Policy";
 import Terms_of_Service from "./pages/Terms_of_Service";
 import BlogDetails from "./pages/BlogDetails";
 import AllBlogs from "./pages/AllBlogs";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
         
         {/* Sign In/Sign Up Page */}
         <Route path="/signin" element={<SignIn />} />
+        {/* <Route path="/signup" element={<SignUp />} /> */}
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/privacy" element={<Privicy_Policy/>}/>
