@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { Link as LinkRouter, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import useAuthStore from "../store/authStore";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
 
@@ -22,7 +22,7 @@ const Header = () => {
     { label: "Pricing", to: "pricing" },
   ];
 
-  const handleNavigateToSection = (sectionId) => {
+  const handleNavigateToSection = (sectionId: string) => {
     if (!isHomePage) {
       navigate("/");
       setTimeout(() => {
@@ -30,8 +30,7 @@ const Header = () => {
         if (element) {
           const offset = 80;
           const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition =
-            elementPosition + window.pageYOffset - offset;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
           window.scrollTo({ top: offsetPosition, behavior: "smooth" });
         }
       }, 100);
@@ -41,21 +40,23 @@ const Header = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-
-        {/* Logo */}
-        <LinkRouter to="/">
-          <img src={assets.footer_logo} alt="logo" className="w-1/5" />
+        {/* ✅ Responsive Logo with login state */}
+        <LinkRouter to={isLoggedIn ? "/dashboard" : "/"}>
+          <img
+            src={assets.footer_logo}
+            alt="logo"
+            className="w-1/5 cursor-pointer"
+          />
         </LinkRouter>
 
-        {/* Desktop Navigation */}
+        {/* 🌐 Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700">
           {!isLoggedIn ? (
             <>
-              {/* Public Navbar */}
               {navItems.map(({ label, to }) =>
                 label === "Home" ? (
                   isHomePage ? (
-                    <Link
+                    <ScrollLink
                       key={to}
                       to="home"
                       smooth
@@ -63,12 +64,12 @@ const Header = () => {
                       offset={-80}
                       spy={true}
                       onSetActive={() => setActive("home")}
-                      className={`cursor-pointer ${
-                        active === "home" ? "text-blue-600 font-bold" : ""
+                      className={`cursor-pointer hover:text-blue-600 ${
+                        active === "home" ? "text-blue-600 font-semibold" : ""
                       }`}
                     >
                       Home
-                    </Link>
+                    </ScrollLink>
                   ) : (
                     <button
                       key={to}
@@ -79,7 +80,7 @@ const Header = () => {
                     </button>
                   )
                 ) : isHomePage ? (
-                  <Link
+                  <ScrollLink
                     key={to}
                     to={to}
                     smooth
@@ -88,11 +89,11 @@ const Header = () => {
                     spy={true}
                     onSetActive={() => setActive(to)}
                     className={`cursor-pointer hover:text-blue-600 ${
-                      active === to ? "text-blue-600 font-bold" : ""
+                      active === to ? "text-blue-600 font-semibold" : ""
                     }`}
                   >
                     {label}
-                  </Link>
+                  </ScrollLink>
                 ) : (
                   <button
                     key={to}
@@ -104,8 +105,19 @@ const Header = () => {
                 )
               )}
 
-              <LinkRouter to="/blog">Blog</LinkRouter>
+              {/* Blog */}
+              <LinkRouter
+                to="/blog"
+                className={`hover:text-blue-600 ${
+                  location.pathname === "/blog"
+                    ? "text-blue-600 font-semibold"
+                    : ""
+                }`}
+              >
+                Blog
+              </LinkRouter>
 
+              {/* Get Started */}
               <LinkRouter
                 to="/signin"
                 className="bg-blue-600 text-white px-5 py-3 rounded-xl"
@@ -115,16 +127,78 @@ const Header = () => {
             </>
           ) : (
             <>
-              {/* Logged-in Navbar */}
-              <LinkRouter to="/dashboard">Dashboard</LinkRouter>
-              <LinkRouter to="/listing">Listing</LinkRouter>
-              <LinkRouter to="/writing">Writing</LinkRouter>
-              <LinkRouter to="/speaking">Speaking</LinkRouter>
-              <LinkRouter to="/mock-test">Mock Test</LinkRouter>
-              <LinkRouter to="/profile">Profile</LinkRouter>
+              {/* 🔐 Logged In Menu */}
+              <LinkRouter
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/dashboard"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+                to="/dashboard"
+              >
+                Dashboard
+              </LinkRouter>
+
+              <LinkRouter
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/listing"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+                to="/listing"
+              >
+                Listing
+              </LinkRouter>
+
+              <LinkRouter
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/writing"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+                to="/writing"
+              >
+                Writing
+              </LinkRouter>
+
+              <LinkRouter
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/speaking"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+                to="/speaking"
+              >
+                Speaking
+              </LinkRouter>
+
+              <LinkRouter
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/mock-test"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+                to="/mock-test"
+              >
+                Mock Test
+              </LinkRouter>
+
+              <LinkRouter
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/profile"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+                to="/profile"
+              >
+                Profile
+              </LinkRouter>
 
               <button
-                onClick={logout}
+                onClick={() => {
+                  logout();
+                  navigate("/");
+                }}
                 className="px-4 py-2 bg-red-500 text-white rounded"
               >
                 Logout
@@ -133,44 +207,69 @@ const Header = () => {
           )}
         </nav>
 
-        {/* Mobile Menu Icon */}
+        {/* 📱 Mobile Burger Icon */}
         <button className="md:hidden" onClick={() => setOpen(true)}>
           <Menu size={28} />
         </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* 📱 Mobile Overlay */}
       {open && (
-        <div className="fixed inset-0 bg-black/40" onClick={() => setOpen(false)} />
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40"
+          onClick={() => setOpen(false)}
+        />
       )}
 
+      {/* 📱 Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white p-6 pt-20 transition-all ${
+        className={`fixed top-0 right-0 h-full w-64 bg-white p-6 pt-20 shadow-xl transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <button className="absolute top-5 right-5" onClick={() => setOpen(false)}>
+        {/* 🔥 Mobile Logo with login logic */}
+        <LinkRouter
+          to={isLoggedIn ? "/dashboard" : "/"}
+          onClick={() => setOpen(false)}
+          className="absolute top-5 left-5"
+        >
+          <img
+            src={assets.footer_logo}
+            alt="logo"
+            className="w-24 cursor-pointer"
+          />
+        </LinkRouter>
+
+        {/* Close Button */}
+        <button
+          className="absolute top-5 right-5"
+          onClick={() => setOpen(false)}
+        >
           <X size={28} />
         </button>
 
+        {/* Mobile Links */}
         <div className="flex flex-col gap-6 text-lg font-medium text-gray-700">
-
           {!isLoggedIn ? (
             <>
-              {navItems.map(({ label, to }) =>
+              {navItems.map(({ label, to }) => (
                 <button
                   key={to}
                   onClick={() => {
                     setOpen(false);
                     handleNavigateToSection(to);
                   }}
-                  className="cursor-pointer text-left"
+                  className="text-left cursor-pointer hover:text-blue-600"
                 >
                   {label}
                 </button>
-              )}
+              ))}
 
-              <LinkRouter to="/blog" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/blog"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Blog
               </LinkRouter>
 
@@ -184,28 +283,53 @@ const Header = () => {
             </>
           ) : (
             <>
-              <LinkRouter to="/dashboard" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/dashboard"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Dashboard
               </LinkRouter>
-              <LinkRouter to="/listing" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/listing"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Listing
               </LinkRouter>
-              <LinkRouter to="/writing" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/writing"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Writing
               </LinkRouter>
-              <LinkRouter to="/speaking" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/speaking"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Speaking
               </LinkRouter>
-              <LinkRouter to="/mock-test" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/mock-test"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Mock Test
               </LinkRouter>
-              <LinkRouter to="/profile" onClick={() => setOpen(false)}>
+              <LinkRouter
+                to="/profile"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
                 Profile
               </LinkRouter>
 
               <button
                 onClick={() => {
                   logout();
+                  navigate("/");
                   setOpen(false);
                 }}
                 className="px-4 py-2 bg-red-500 text-white rounded"

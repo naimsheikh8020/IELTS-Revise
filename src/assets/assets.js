@@ -95,3 +95,19 @@ export const navItems = [
     { id: "pricing", label: "Pricing" },
     { id: "blog", label: "Blog" },
   ];
+
+  export const publicNavItems = [
+  { label: "Home", to: "home" },
+  { label: "Features", to: "features" },
+  { label: "Reviews", to: "reviews" },
+  { label: "Pricing", to: "pricing" },
+];
+
+export const dashboardNavItems = [
+  { label: "Dashboard", path: "/dashboard" },
+  { label: "Listing", path: "/listing" },
+  { label: "Writing", path: "/writing" },
+  { label: "Speaking", path: "/speaking" },
+  { label: "Mock Test", path: "/mock-test" },
+  { label: "Profile", path: "/profile" },
+];
