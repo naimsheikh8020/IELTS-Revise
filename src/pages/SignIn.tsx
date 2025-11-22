@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import assets from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuthStore from "../store/authStore";
+
 
 const SignIn = () => {
   const [activeTab, setActiveTab] = useState("signin");
@@ -8,12 +10,26 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  // const handleSubmit = () => {
+  //   console.log("Signing in with:", email, password);
+  // };
+  
+  const login = useAuthStore((state) => state.login);
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleSubmit = () => {
-    console.log("Signing in with:", email, password);
+    login();               // Fake login
+    navigate("/dashboard");
   };
 
   return (

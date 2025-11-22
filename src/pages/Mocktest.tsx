@@ -2,7 +2,9 @@ import React from 'react'
 
 const Mocktest = () => {
   return (
-    <div>Mocktest</div>
+    <div className="min-h-screen pt-32 p-6 bg-gray-50">
+      <h1 className="text-3xl font-bold">Mock Test Page</h1>
+    </div>
   )
 }
 
