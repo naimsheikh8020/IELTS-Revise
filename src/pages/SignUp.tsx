@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import assets from "../assets/assets";
 import { Link } from "react-router-dom";
 
@@ -7,17 +7,13 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  
-  useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
   const handleSubmit = () => {
     console.log("Signing up:", email, password, confirmPassword);
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 mt-20 md:mt-0">
-    <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         
         <div className="flex justify-center mb-4">
           <img src={assets.navbarlogo} alt="" />
