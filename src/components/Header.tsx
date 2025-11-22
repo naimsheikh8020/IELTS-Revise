@@ -19,8 +19,7 @@ const Header = () => {
     { label: "Pricing", to: "pricing" },
   ];
 
-  // Function to handle navigation from other pages to home sections
-  const handleNavigateToSection = (sectionId: string) => {
+  const handleNavigateToSection = (sectionId) => {
     if (!isHomePage) {
       navigate("/");
       setTimeout(() => {
@@ -28,10 +27,11 @@ const Header = () => {
         if (element) {
           const offset = 80;
           const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - offset;
           window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth"
+            behavior: "smooth",
           });
         }
       }, 100);
@@ -41,14 +41,15 @@ const Header = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-        <LinkRouter to='/'><img src={assets.footer_logo} alt="logo"   className="w-1/5"/></LinkRouter>
+        <LinkRouter to="/">
+          <img src={assets.footer_logo} alt="logo" className="w-1/5" />
+        </LinkRouter>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700 whitespace-nowrap">
 
-          {navItems.map(({ label, to }) => (
+          {navItems.map(({ label, to }) =>
             label === "Home" ? (
-              // HOME BUTTON (special behavior)
               isHomePage ? (
                 <Link
                   key={to}
@@ -73,48 +74,47 @@ const Header = () => {
                   Home
                 </button>
               )
+            ) : isHomePage ? (
+              <Link
+                key={to}
+                to={to}
+                smooth
+                duration={400}
+                offset={-80}
+                spy={true}
+                onSetActive={() => setActive(to)}
+                className={`cursor-pointer hover:text-blue-600 ${
+                  active === to ? "text-blue-600 font-semibold" : ""
+                }`}
+              >
+                {label}
+              </Link>
             ) : (
-              // OTHER NAV ITEMS
-              isHomePage ? (
-                <Link
-                  key={to}
-                  to={to}
-                  smooth
-                  duration={400}
-                  offset={-80}
-                  spy={true}
-                  onSetActive={() => setActive(to)}
-                  className={`cursor-pointer hover:text-blue-600 ${
-                    active === to ? "text-blue-600 font-semibold" : ""
-                  }`}
-                >
-                  {label}
-                </Link>
-              ) : (
-                <button
-                  key={to}
-                  onClick={() => handleNavigateToSection(to)}
-                  className="cursor-pointer hover:text-blue-600"
-                >
-                  {label}
-                </button>
-              )
+              <button
+                key={to}
+                onClick={() => handleNavigateToSection(to)}
+                className="cursor-pointer hover:text-blue-600"
+              >
+                {label}
+              </button>
             )
-          ))}
+          )}
 
-          {/* Blog Button using React Router */}
-          <LinkRouter 
-            to="/blog" 
+          {/* Blog Route */}
+          <LinkRouter
+            to="/blog"
             className={`hover:text-blue-600 ${
-              location.pathname === "/blog" ? "text-blue-600 font-semibold" : ""
+              location.pathname === "/blog"
+                ? "text-blue-600 font-semibold"
+                : ""
             }`}
           >
             Blog
           </LinkRouter>
 
-          {/* Fixed Get Started Button */}
-          <LinkRouter 
-            to='/signin'
+          {/* SIGN UP BUTTON */}
+          <LinkRouter
+            to="/signin"
             className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl"
           >
             Get Started
@@ -142,12 +142,15 @@ const Header = () => {
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <button className="absolute top-5 right-5" onClick={() => setOpen(false)}>
+        <button
+          className="absolute top-5 right-5"
+          onClick={() => setOpen(false)}
+        >
           <X size={28} />
         </button>
 
         <div className="flex flex-col gap-6 text-lg font-medium text-gray-700">
-          {navItems.map(({ label, to }) => (
+          {navItems.map(({ label, to }) =>
             label === "Home" ? (
               isHomePage ? (
                 <Link
@@ -174,51 +177,53 @@ const Header = () => {
                   Home
                 </button>
               )
+            ) : isHomePage ? (
+              <Link
+                key={to}
+                to={to}
+                smooth
+                duration={400}
+                offset={-80}
+                spy={true}
+                onClick={() => setOpen(false)}
+                className="cursor-pointer"
+              >
+                {label}
+              </Link>
             ) : (
-              isHomePage ? (
-                <Link
-                  key={to}
-                  to={to}
-                  smooth
-                  duration={400}
-                  offset={-80}
-                  spy={true}
-                  onClick={() => setOpen(false)}
-                  className="cursor-pointer"
-                >
-                  {label}
-                </Link>
-              ) : (
-                <button
-                  key={to}
-                  onClick={() => {
-                    setOpen(false);
-                    handleNavigateToSection(to);
-                  }}
-                  className="cursor-pointer text-left"
-                >
-                  {label}
-                </button>
-              )
+              <button
+                key={to}
+                onClick={() => {
+                  setOpen(false);
+                  handleNavigateToSection(to);
+                }}
+                className="cursor-pointer text-left"
+              >
+                {label}
+              </button>
             )
-          ))}
+          )}
 
+          {/* Blog */}
           <LinkRouter
             to="/blog"
-            className={`cursor-pointer ${
-              location.pathname === "/blog" ? "text-blue-600 font-semibold" : ""
-            }`}
             onClick={() => setOpen(false)}
+            className={`cursor-pointer ${
+              location.pathname === "/blog"
+                ? "text-blue-600 font-semibold"
+                : ""
+            }`}
           >
             Blog
           </LinkRouter>
 
+          {/* SIGN UP MOBILE */}
           <LinkRouter
-           to='/signin' 
-           className="bg-blue-600 cursor-pointer hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl mt-4"
-           onClick={() => setOpen(false)}
-           >
-          Get Started
+            to="/signin"
+            onClick={() => setOpen(false)}
+            className="bg-blue-600 hover:bg-blue-700 px-5 py-3 text-white font-semibold rounded-xl"
+          >
+            Get Started
           </LinkRouter>
         </div>
       </div>
