@@ -6,9 +6,9 @@ import Student_Result from "../section/Student_Result";
 
 const Features = () => {
   return (
-    <div className="">
+    <div className="pt-20">
       <div className="">
-        <p className="bg-blue-100 mt-20 text-base my-5 text-blue-600 px-4 py-2 rounded-full text-center mx-auto block w-fit">
+        <p className="bg-blue-100  text-base my-5 text-blue-600 px-4 py-2 rounded-full text-center mx-auto block w-fit">
   What Make Us different
 </p>
         <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-center">
