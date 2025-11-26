@@ -38,7 +38,9 @@ const ScoreProgressChart: React.FC = () => {
       {/* Mobile-Responsive Fix */}
       <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data}>
+          <LineChart data={data} style={{
+            padding: 5
+          }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="week" tick={{ fontSize: 13 }} />
             <YAxis domain={[5, 9]} tick={{ fontSize: 13 }} />
