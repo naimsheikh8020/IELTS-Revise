@@ -5,13 +5,15 @@ import ScoreSection from "../components/Dashboard/ScoreSection";
 import ScoreProgressChart from "../components/Dashboard/ScoreProgressChart";
 import SectionPerformanceChart from "../components/Dashboard/SectionPerformanceChart";
 import ChartSection from "../components/Dashboard/ChartSection";
+import RecentActivity from "../components/Dashboard/RecentActivity";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 sm:pt-28 px-4 sm:px-8 md:px-12">
+    <div className="min-h-screen  pt-28 sm:pt-28 px-4 sm:px-8 md:px-12">
       <TopBanner />
       <ScoreSection/>
       <ChartSection/>
+      <RecentActivity/>
     </div>
   );
 };

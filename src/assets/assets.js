@@ -35,8 +35,18 @@ import readingforielts from "./readingforielts.svg"
 import writingforielts from "./writtingforielts.svg"
 import speakingforielts from "./speakingforielts.svg"
 import listinginfroielts from "./listingforielts.svg"
+import listingrecent from "./listingrecent.svg"
+import writingrecent from "./writtingrecent.svg"
+import speakingrecent from "./speakingrecent.svg"
+import readingrecent from "./readingrecent.svg"
+import recentActivity from "./recentActivite.svg"
 
 const assets ={
+  recentActivity,
+  listingrecent,
+  writingrecent,
+  speakingrecent,
+  readingrecent,
   readingforielts,
   writingforielts,
   speakingforielts,
