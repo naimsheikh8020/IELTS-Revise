@@ -27,6 +27,10 @@ import top_Achivment from "./top_Achivment.png"
 import correct from "./correct.png"
 import featuredBlogImage from "./featured-blog.jpg"
 import footer_logo from "./footer_logo-transprant.png"
+import listing1 from "./listing.png"
+import reading1 from "./reading1.png"
+import writing1 from "./writting1.png"
+import speaking1 from "./speaking1.png"
 
 const assets ={
     achivement,
@@ -57,7 +61,11 @@ const assets ={
     twitter,
     writing,
     top_Achivment,
-    featuredBlogImage
+    featuredBlogImage,
+    listing1,
+    reading1,
+    writing1,
+    speaking1
 }
 export default assets
 
@@ -111,3 +119,8 @@ export const dashboardNavItems = [
   { label: "Mock Test", path: "/mock-test" },
   { label: "Profile", path: "/profile" },
 ];
+
+export const userData = {
+  name: "John Doe",
+  score: 8.5,
+};
