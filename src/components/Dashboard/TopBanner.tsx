@@ -3,21 +3,31 @@ import { userData } from "../../assets/assets";
 import PrimaryButton from "../Button/PrimaryButton";
 import SecondaryButton from "../Button/SecondaryButton";
 
-
 const TopBanner = () => {
   return (
-    <div className="bg-white p-10 rounded-2xl shadow-md  gap-4">
-      <h2 className="font-bold text-blue-600 text-3xl leading-relaxed">
-        Welcome back, {userData.name}!<span>🎯</span>
+    <div className="bg-white  p-6 md:p-10 rounded-2xl shadow-md space-y-4">
+      {/* Title */}
+      <h2 className="font-bold text-blue-600 text-2xl sm:text-3xl leading-relaxed">
+        Welcome back, {userData.name}! <span>🎯</span>
       </h2>
-      <p className="text-lg text-gray-600">
+
+      {/* Subtitle */}
+      <p className="text-base  text-gray-600 leading-relaxed">
         You're improving! Keep practicing to boost your band score. Your current
-        overall band is <span className="font-bold text-orange-600">{userData.score}</span>
+        overall band is{" "}
+        <span className="font-bold text-orange-600">{userData.score}</span>
       </p>
 
-      <PrimaryButton className="mt-4">Continue Where You Left Off</PrimaryButton>
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+        <PrimaryButton className="mt-2 sm:mt-0 w-full sm:w-auto">
+          Continue Where You Left Off
+        </PrimaryButton>
 
-      <SecondaryButton className="mt-4 ml-4">Start New Mock Test</SecondaryButton>
+        <SecondaryButton className="mt-3 sm:mt-0 w-full sm:w-auto">
+          Start New Mock Test
+        </SecondaryButton>
+      </div>
     </div>
   );
 };

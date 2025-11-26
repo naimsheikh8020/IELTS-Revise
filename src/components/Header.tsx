@@ -40,7 +40,8 @@ const Header: React.FC = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-        {/* ✅ Responsive Logo with login state */}
+
+        {/* Logo */}
         <LinkRouter to={isLoggedIn ? "/dashboard" : "/"}>
           <img
             src={assets.footer_logo}
@@ -49,37 +50,12 @@ const Header: React.FC = () => {
           />
         </LinkRouter>
 
-        {/* 🌐 Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6 font-medium text-gray-700">
+        {/* Desktop Navigation (lg only) */}
+        <nav className="hidden lg:flex items-center gap-6 font-medium text-gray-700">
           {!isLoggedIn ? (
             <>
               {navItems.map(({ label, to }) =>
-                label === "Home" ? (
-                  isHomePage ? (
-                    <ScrollLink
-                      key={to}
-                      to="home"
-                      smooth
-                      duration={400}
-                      offset={-80}
-                      spy={true}
-                      onSetActive={() => setActive("home")}
-                      className={`cursor-pointer hover:text-blue-600 ${
-                        active === "home" ? "text-blue-600 font-semibold" : ""
-                      }`}
-                    >
-                      Home
-                    </ScrollLink>
-                  ) : (
-                    <button
-                      key={to}
-                      onClick={() => handleNavigateToSection("home")}
-                      className="cursor-pointer hover:text-blue-600"
-                    >
-                      Home
-                    </button>
-                  )
-                ) : isHomePage ? (
+                isHomePage ? (
                   <ScrollLink
                     key={to}
                     to={to}
@@ -105,7 +81,6 @@ const Header: React.FC = () => {
                 )
               )}
 
-              {/* Blog */}
               <LinkRouter
                 to="/blog"
                 className={`hover:text-blue-600 ${
@@ -117,7 +92,6 @@ const Header: React.FC = () => {
                 Blog
               </LinkRouter>
 
-              {/* Get Started */}
               <LinkRouter
                 to="/signin"
                 className="bg-blue-600 text-white px-5 py-3 rounded-xl"
@@ -127,69 +101,68 @@ const Header: React.FC = () => {
             </>
           ) : (
             <>
-              {/* 🔐 Logged In Menu */}
               <LinkRouter
+                to="/dashboard"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/dashboard"
                     ? "text-blue-600 font-bold"
                     : ""
                 }`}
-                to="/dashboard"
               >
                 Dashboard
               </LinkRouter>
 
               <LinkRouter
+                to="/listing"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/listing"
                     ? "text-blue-600 font-bold"
                     : ""
                 }`}
-                to="/listing"
               >
                 Listing
               </LinkRouter>
 
               <LinkRouter
+                to="/writing"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/writing"
                     ? "text-blue-600 font-bold"
                     : ""
                 }`}
-                to="/writing"
               >
                 Writing
               </LinkRouter>
 
               <LinkRouter
+                to="/speaking"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/speaking"
                     ? "text-blue-600 font-bold"
                     : ""
                 }`}
-                to="/speaking"
               >
                 Speaking
               </LinkRouter>
 
               <LinkRouter
+                to="/mock-test"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/mock-test"
                     ? "text-blue-600 font-bold"
                     : ""
                 }`}
-                to="/mock-test"
               >
                 Mock Test
               </LinkRouter>
 
               <LinkRouter
+                to="/profile"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/profile"
                     ? "text-blue-600 font-bold"
                     : ""
                 }`}
-                to="/profile"
               >
                 Profile
               </LinkRouter>
@@ -207,27 +180,31 @@ const Header: React.FC = () => {
           )}
         </nav>
 
-        {/* 📱 Mobile Burger Icon */}
-        <button className="md:hidden" onClick={() => setOpen(true)}>
+        {/* Burger Menu (Mobile + Tablet) */}
+        <button className="lg:hidden" onClick={() => setOpen(true)}>
           <Menu size={28} />
         </button>
       </div>
 
-      {/* 📱 Mobile Overlay */}
+      {/* Mobile/Tablet Overlay (FIXED UX) */}
       {open && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-40"
+          className="
+            fixed inset-0
+            bg-black bg-opacity-40         /* Mobile overlay */
+            md:bg-transparent md:bg-opacity-0 md:backdrop-blur-sm /* Tablet: clean look */
+          "
           onClick={() => setOpen(false)}
         />
       )}
 
-      {/* 📱 Mobile Drawer */}
+      {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white p-6 pt-20 shadow-xl transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-64 md:w-72 bg-white p-6 pt-20 shadow-xl transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* 🔥 Mobile Logo with login logic */}
+        {/* Logo */}
         <LinkRouter
           to={isLoggedIn ? "/dashboard" : "/"}
           onClick={() => setOpen(false)}
@@ -240,7 +217,6 @@ const Header: React.FC = () => {
           />
         </LinkRouter>
 
-        {/* Close Button */}
         <button
           className="absolute top-5 right-5"
           onClick={() => setOpen(false)}
@@ -248,7 +224,6 @@ const Header: React.FC = () => {
           <X size={28} />
         </button>
 
-        {/* Mobile Links */}
         <div className="flex flex-col gap-6 text-lg font-medium text-gray-700">
           {!isLoggedIn ? (
             <>
@@ -290,6 +265,7 @@ const Header: React.FC = () => {
               >
                 Dashboard
               </LinkRouter>
+
               <LinkRouter
                 to="/listing"
                 onClick={() => setOpen(false)}
@@ -297,6 +273,7 @@ const Header: React.FC = () => {
               >
                 Listing
               </LinkRouter>
+
               <LinkRouter
                 to="/writing"
                 onClick={() => setOpen(false)}
@@ -304,6 +281,7 @@ const Header: React.FC = () => {
               >
                 Writing
               </LinkRouter>
+
               <LinkRouter
                 to="/speaking"
                 onClick={() => setOpen(false)}
@@ -311,6 +289,7 @@ const Header: React.FC = () => {
               >
                 Speaking
               </LinkRouter>
+
               <LinkRouter
                 to="/mock-test"
                 onClick={() => setOpen(false)}
@@ -318,6 +297,7 @@ const Header: React.FC = () => {
               >
                 Mock Test
               </LinkRouter>
+
               <LinkRouter
                 to="/profile"
                 onClick={() => setOpen(false)}

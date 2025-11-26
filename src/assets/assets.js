@@ -31,8 +31,16 @@ import listing1 from "./listing.png"
 import reading1 from "./reading1.png"
 import writing1 from "./writting1.png"
 import speaking1 from "./speaking1.png"
+import readingforielts from "./readingforielts.svg"
+import writingforielts from "./writtingforielts.svg"
+import speakingforielts from "./speakingforielts.svg"
+import listinginfroielts from "./listingforielts.svg"
 
 const assets ={
+  readingforielts,
+  writingforielts,
+  speakingforielts,
+  listinginfroielts,
     achivement,
     correct,
     average_score,
@@ -124,3 +132,43 @@ export const userData = {
   name: "John Doe",
   score: 8.5,
 };//hi
+export const scoreCardsData = [
+  {
+    title: "Listening",
+    icon: "🎧",
+    score: "28/40",
+    band: 7,
+    extra: "Focus on Q15-20: 60% accuracy",
+    progress: 70,
+
+  },
+  {
+    title: "Reading",
+    icon: "📚",
+    score: "32/40",
+    band: 7.5,
+    extra: "Excellent performance!",
+    progress: 80,
+    advice: "",
+  },
+  {
+    title: "Writing",
+    icon: "✍️",
+    score: 7.5,
+    band: "Task 1: 7.0, Task 2: 8.0",
+    extra: "Focus on coherence & cohesion",
+    progress: 75,
+    advice: "",
+  },
+  {
+    title: "Speaking",
+    icon: "🎤",
+    score: "Band 6.5",
+    band: "Fluency: 7.0, Pronunciation: 6.0",
+    extra: "Practice linking sentences",
+    progress: 65,
+    advice: "",
+  },
+];
+
+
