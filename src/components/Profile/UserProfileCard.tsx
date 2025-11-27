@@ -20,56 +20,50 @@ const UserProfileCard: React.FC<Props> = ({
 }) => {
   return (
     <div className="w-full max-w-xs mt-5">
-
       {/* MAIN CARD */}
       <div className="bg-white rounded-2xl p-6  shadow-[0_6px_22px_rgba(0,0,0,0.06)]">
-
         {/* GRADIENT BORDER WRAPPER */}
-<div className="bg-gradient-to-br from-blue-600 to-cyan-400 p-[2px] rounded-2xl">
+        <div className="bg-gradient-to-br from-blue-600 to-cyan-400 p-[2px] rounded-2xl">
+          {/* REAL CARD INSIDE */}
+          <div className="bg-white rounded-2xl p-6">
+            {/* Avatar */}
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center text-white text-2xl font-semibold">
+                {name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")
+                  .toUpperCase()}
+              </div>
+            </div>
 
-  {/* REAL CARD INSIDE */}
-  <div className="bg-white rounded-2xl p-6">
+            {/* Name + Email */}
+            <div className="text-center">
+              <h2 className="text-lg font-semibold text-gray-900">{name}</h2>
+              <p className="text-sm text-gray-500">{email}</p>
+            </div>
 
-    {/* Avatar */}
-    <div className="flex justify-center mb-4">
-      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center text-white text-2xl font-semibold">
-        {name
-          .split(" ")
-          .map((n) => n[0])
-          .join("")
-          .toUpperCase()}
-      </div>
-    </div>
+            {/* Membership Card */}
+            <div className="mt-5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-4 text-center">
+              <Crown size={20} className="mx-auto mb-1 opacity-90" />
+              <p className="text-sm font-medium">{memberLevel}</p>
+              <p className="text-xs opacity-80">Member since {memberSince}</p>
+            </div>
 
-    {/* Name + Email */}
-    <div className="text-center">
-      <h2 className="text-lg font-semibold text-gray-900">{name}</h2>
-      <p className="text-sm text-gray-500">{email}</p>
-    </div>
+            {/* Stats */}
+            <div className="flex justify-between mt-6">
+              <div className="w-1/2 text-center">
+                <h3 className="text-xl font-semibold">{questions}</h3>
+                <p className="text-gray-500 text-sm">Questions</p>
+              </div>
 
-    {/* Membership Card */}
-    <div className="mt-5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-4 text-center">
-      <Crown size={20} className="mx-auto mb-1 opacity-90" />
-      <p className="text-sm font-medium">{memberLevel}</p>
-      <p className="text-xs opacity-80">Member since {memberSince}</p>
-    </div>
-
-    {/* Stats */}
-    <div className="flex justify-between mt-6">
-      <div className="w-1/2 text-center">
-        <h3 className="text-xl font-semibold">{questions}</h3>
-        <p className="text-gray-500 text-sm">Questions</p>
-      </div>
-
-      <div className="w-1/2 text-center border-l border-gray-200">
-        <h3 className="text-xl font-semibold">{avgScore}</h3>
-        <p className="text-gray-500 text-sm">Avg Score</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
+              <div className="w-1/2 text-center border-l border-gray-200">
+                <h3 className="text-xl font-semibold">{avgScore}</h3>
+                <p className="text-gray-500 text-sm">Avg Score</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* BOTTOM SECTION (Inside same card) */}
         <div className="mt-5 md:mt-50 bg-white rounded-xl shadow-sm p-4 border border-gray-200">
@@ -87,7 +81,6 @@ const UserProfileCard: React.FC<Props> = ({
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );
