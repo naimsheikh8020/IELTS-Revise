@@ -1,9 +1,13 @@
 import React from 'react'
+import ProfileHeader from '../components/Profile/ProfileHeader'
+import AccountSettings from '../components/Profile/ProfileContent'
+
 
 const Profile = () => {
   return (
-    <div className="min-h-screen pt-32 p-6 bg-gray-50">
-      <h1 className="text-3xl font-bold">Profile Page</h1>
+    <div className="min-h-screen  pt-28 sm:pt-28 px-4 sm:px-8 md:px-12">
+      <ProfileHeader/>
+      
     </div>
   )
 }

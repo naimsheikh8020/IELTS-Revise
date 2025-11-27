@@ -40,9 +40,11 @@ import writingrecent from "./writtingrecent.svg"
 import speakingrecent from "./speakingrecent.svg"
 import readingrecent from "./readingrecent.svg"
 import recentActivity from "./recentActivite.svg"
+import leftarrow from "./leftarrow.svg"
 
 const assets ={
   recentActivity,
+  leftarrow,
   listingrecent,
   writingrecent,
   speakingrecent,
