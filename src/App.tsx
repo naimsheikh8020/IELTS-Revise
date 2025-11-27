@@ -24,6 +24,7 @@ import Writing from "./pages/Writing";
 import Speaking from "./pages/Speaking";
 import Mocktest from "./pages/Mocktest";
 import Profile from "./pages/Profile";
+import Reading from "./pages/Reading";
 
 
 const App = () => {
@@ -67,6 +68,7 @@ const App = () => {
         {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/listing" element={<Listing />} />
+        <Route path="/reading" element={<Reading />} />
         <Route path="/writing" element={<Writing />} />
         <Route path="/speaking" element={<Speaking />} />
         <Route path="/mock-test" element={<Mocktest />} />
