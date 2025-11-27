@@ -3,7 +3,7 @@ import React from 'react'
 const Reading = () => {
   return (
     <div className="min-h-screen pt-32 p-6 bg-gray-50">
-      <h1 className="text-3xl font-bold">Speaking Page</h1>
+      <h1 className="text-3xl font-bold">Reading Page</h1>
     </div>
   )
 }

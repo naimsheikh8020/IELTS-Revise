@@ -123,6 +123,18 @@ const Header: React.FC = () => {
                 Listing
               </LinkRouter>
 
+              {/* ✅ FIXED: Reading added here */}
+              <LinkRouter
+                to="/reading"
+                className={`cursor-pointer hover:text-blue-600 ${
+                  location.pathname === "/reading"
+                    ? "text-blue-600 font-bold"
+                    : ""
+                }`}
+              >
+                Reading
+              </LinkRouter>
+
               <LinkRouter
                 to="/writing"
                 className={`cursor-pointer hover:text-blue-600 ${
@@ -180,20 +192,16 @@ const Header: React.FC = () => {
           )}
         </nav>
 
-        {/* Burger Menu (Mobile + Tablet) */}
+        {/* Burger Menu */}
         <button className="lg:hidden" onClick={() => setOpen(true)}>
           <Menu size={28} />
         </button>
       </div>
 
-      {/* Mobile/Tablet Overlay (FIXED UX) */}
+      {/* Mobile Overlay */}
       {open && (
         <div
-          className="
-            fixed inset-0
-            bg-black bg-opacity-40         /* Mobile overlay */
-            md:bg-transparent md:bg-opacity-0 md:backdrop-blur-sm /* Tablet: clean look */
-          "
+          className="fixed inset-0 bg-black bg-opacity-40 md:bg-transparent md:bg-opacity-0"
           onClick={() => setOpen(false)}
         />
       )}
@@ -272,6 +280,15 @@ const Header: React.FC = () => {
                 className="hover:text-blue-600"
               >
                 Listing
+              </LinkRouter>
+
+              {/* Mobile already had Reading */}
+              <LinkRouter
+                to="/reading"
+                onClick={() => setOpen(false)}
+                className="hover:text-blue-600"
+              >
+                Reading
               </LinkRouter>
 
               <LinkRouter
