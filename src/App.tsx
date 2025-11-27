@@ -25,6 +25,7 @@ import Speaking from "./pages/Speaking";
 import Mocktest from "./pages/Mocktest";
 import Profile from "./pages/Profile";
 import Reading from "./pages/Reading";
+import NotFound from "./pages/NotFound";
 
 
 const App = () => {
@@ -73,8 +74,11 @@ const App = () => {
         <Route path="/speaking" element={<Speaking />} />
         <Route path="/mock-test" element={<Mocktest />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      {/* Not Found Page Added */}
 
+      
       <Footer />
     </div>
   );
