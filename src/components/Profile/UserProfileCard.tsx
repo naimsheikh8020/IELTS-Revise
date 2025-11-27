@@ -22,7 +22,7 @@ const UserProfileCard: React.FC<Props> = ({
     <div className="w-full max-w-xs mt-5">
 
       {/* MAIN CARD */}
-      <div className="bg-white rounded-2xl p-6  shadow-[0_6px_22px_rgba(0,0,0,0.09)]">
+      <div className="bg-white rounded-2xl p-6  shadow-[0_6px_22px_rgba(0,0,0,0.06)]">
 
         {/* GRADIENT BORDER WRAPPER */}
 <div className="bg-gradient-to-br from-blue-600 to-cyan-400 p-[2px] rounded-2xl">
