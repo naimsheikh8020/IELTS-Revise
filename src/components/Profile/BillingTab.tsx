@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { CreditCard, Trash2, Plus } from 'lucide-react'
+import BankCard from "./BankCard"; // 👈 IMPORTANT
 
 const BillingTab = () => {
   const [paymentMethods, setPaymentMethods] = useState([
@@ -18,26 +19,24 @@ const BillingTab = () => {
     { id: 3, amount: 199, currency: '£', date: '2025-08-12', status: 'paid', invoiceUrl: '/2025-08.pdf' },
   ])
 
-  const handleUpdatePayment = () => console.log('Update payment')
-  const handleDeleteCard = (id) => setPaymentMethods(paymentMethods.filter(c => c.id !== id))
-  const handleAddNewCard = () => console.log('Open add card modal')
-  const handleDownloadInvoice = (url) => console.log('Download invoice:', url)
+  // 👇 Add modal state here
+  const [showAddCardModal, setShowAddCardModal] = useState(false);
+
+  const handleDeleteCard = (id: number) =>
+    setPaymentMethods((prev) => prev.filter((c) => c.id !== id));
+
+  const handleDownloadInvoice = (url: string) =>
+    console.log('Download invoice:', url);
 
   return (
     <div className="w-full h-full p-4 overflow-auto">
-      <div className="w-full space-y-5"> {/* FULL WIDTH */}
+      <div className="w-full space-y-5">
 
         {/* Payment Method */}
         <div className="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
 
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-base font-semibold text-gray-900">Payment Method</h2>
-            <button
-              onClick={handleUpdatePayment}
-              className="text-sm text-gray-700 hover:text-gray-900"
-            >
-              Update
-            </button>
           </div>
 
           {/* Card List */}
@@ -73,7 +72,7 @@ const BillingTab = () => {
 
           {/* Add New Card */}
           <button
-            onClick={handleAddNewCard}
+            onClick={() => setShowAddCardModal(true)}  // 👈 OPEN MODAL
             className="w-full mt-3 flex items-center justify-center gap-2 border border-dashed border-gray-300 rounded-lg py-2.5 text-sm font-medium text-gray-700 hover:border-gray-400 hover:bg-gray-50"
           >
             <Plus className="w-4 h-4" />
@@ -83,7 +82,6 @@ const BillingTab = () => {
 
         {/* Billing History */}
         <div className="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
-
           <h2 className="text-base font-semibold text-gray-900 mb-4">Billing History</h2>
 
           <div className="space-y-3">
@@ -114,10 +112,16 @@ const BillingTab = () => {
               </div>
             ))}
           </div>
-
         </div>
 
       </div>
+
+      {/* 👇 MODAL HERE */}
+      <BankCard
+        isOpen={showAddCardModal}
+        onClose={() => setShowAddCardModal(false)}
+      />
+
     </div>
   )
 }

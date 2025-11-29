@@ -74,6 +74,8 @@ const App = () => {
         <Route path="/speaking" element={<Speaking />} />
         <Route path="/mock-test" element={<Mocktest />} />
         <Route path="/profile" element={<Profile />} />
+
+        
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* Not Found Page Added */}

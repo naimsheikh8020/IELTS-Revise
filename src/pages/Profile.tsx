@@ -7,13 +7,9 @@ const Profile = () => {
   return (
     <div className="min-h-screen pt-28 sm:pt-28 px-4 sm:px-8 md:px-12">
       
-      {/* Header */}
       <ProfileHeader />
-
-      {/* Responsive Layout */}
       <div className="flex flex-col md:flex-row gap-6 mt-6 items-center md:items-start mb-6">
         
-        {/* Left Card */}
         <UserProfileCard
           name="Sarah Chen"
           email="sarah.chen@example.com"
@@ -23,7 +19,6 @@ const Profile = () => {
           memberSince="Sep 2025"
         />
 
-        {/* Right Card */}
         <div className="w-full md:flex-1 flex justify-center md:justify-start">
           <ProfileTabs />
         </div>
