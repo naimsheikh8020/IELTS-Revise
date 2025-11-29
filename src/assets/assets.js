@@ -189,3 +189,395 @@ export const scoreCardsData = [
 ];
 
 
+// ... your existing image imports and default export ...
+
+// Export a list of parts (one object per part)
+export const partDataList = [
+  // =====================================
+  // PART 1
+  // =====================================
+  {
+    title: "Part 1",
+    description: "Listening Part 1 – Answer all 10 questions.",
+    questions: [
+      // MCQs 1–6
+      {
+        number: 1,
+        type: "mcq",
+        question: "Part 1 - Question 1",
+        options: [
+          { label: "A", text: "Option A1" },
+          { label: "B", text: "Option B1" },
+          { label: "C", text: "Option C1" },
+        ],
+      },
+      {
+        number: 2,
+        type: "mcq",
+        question: "Part 1 - Question 2",
+        options: [
+          { label: "A", text: "Option A2" },
+          { label: "B", text: "Option B2" },
+          { label: "C", text: "Option C2" },
+        ],
+      },
+      {
+        number: 3,
+        type: "mcq",
+        question: "Part 1 - Question 3",
+        options: [
+          { label: "A", text: "Option A3" },
+          { label: "B", text: "Option B3" },
+          { label: "C", text: "Option C3" },
+        ],
+      },
+      {
+        number: 4,
+        type: "mcq",
+        question: "Part 1 - Question 4",
+        options: [
+          { label: "A", text: "Option A4" },
+          { label: "B", text: "Option B4" },
+          { label: "C", text: "Option C4" },
+        ],
+      },
+      {
+        number: 5,
+        type: "mcq",
+        question: "Part 1 - Question 5",
+        options: [
+          { label: "A", text: "Option A5" },
+          { label: "B", text: "Option B5" },
+          { label: "C", text: "Option C5" },
+        ],
+      },
+      {
+        number: 6,
+        type: "mcq",
+        question: "Part 1 - Question 6",
+        options: [
+          { label: "A", text: "Option A6" },
+          { label: "B", text: "Option B6" },
+          { label: "C", text: "Option C6" },
+        ],
+      },
+
+      // Input questions 7–10
+      {
+        number: 7,
+        type: "input",
+        labelLeft: "Customer’s name:",
+        placeholder: "Enter name",
+      },
+      {
+        number: 8,
+        type: "input",
+        labelLeft: "Address:",
+        placeholder: "Enter address",
+      },
+      {
+        number: 9,
+        type: "input",
+        labelLeft: "Destination:",
+        placeholder: "Enter destination",
+      },
+      {
+        number: 10,
+        type: "input",
+        labelLeft: "Contact number:",
+        placeholder: "Home number",
+      },
+    ],
+  },
+
+  // =====================================
+  // PART 2
+  // =====================================
+  {
+    title: "Part 2",
+    description: "Listening Part 2 – Answer all 10 questions.",
+    questions: [
+      // MCQs 1–6
+      {
+        number: 1,
+        type: "mcq",
+        question: "Part 2 - Question 1",
+        options: [
+          { label: "A", text: "Choice A1" },
+          { label: "B", text: "Choice B1" },
+          { label: "C", text: "Choice C1" },
+        ],
+      },
+      {
+        number: 2,
+        type: "mcq",
+        question: "Part 2 - Question 2",
+        options: [
+          { label: "A", text: "Choice A2" },
+          { label: "B", text: "Choice B2" },
+          { label: "C", text: "Choice C2" },
+        ],
+      },
+      {
+        number: 3,
+        type: "mcq",
+        question: "Part 2 - Question 3",
+        options: [
+          { label: "A", text: "Choice A3" },
+          { label: "B", text: "Choice B3" },
+          { label: "C", text: "Choice C3" },
+        ],
+      },
+      {
+        number: 4,
+        type: "mcq",
+        question: "Part 2 - Question 4",
+        options: [
+          { label: "A", text: "Choice A4" },
+          { label: "B", text: "Choice B4" },
+          { label: "C", text: "Choice C4" },
+        ],
+      },
+      {
+        number: 5,
+        type: "mcq",
+        question: "Part 2 - Question 5",
+        options: [
+          { label: "A", text: "Choice A5" },
+          { label: "B", text: "Choice B5" },
+          { label: "C", text: "Choice C5" },
+        ],
+      },
+      {
+        number: 6,
+        type: "mcq",
+        question: "Part 2 - Question 6",
+        options: [
+          { label: "A", text: "Choice A6" },
+          { label: "B", text: "Choice B6" },
+          { label: "C", text: "Choice C6" },
+        ],
+      },
+
+      // Input 7–10
+      {
+        number: 7,
+        type: "input",
+        labelLeft: "Booking date:",
+        placeholder: "Enter date",
+      },
+      {
+        number: 8,
+        type: "input",
+        labelLeft: "Tour package:",
+        placeholder: "Package name",
+      },
+      {
+        number: 9,
+        type: "input",
+        labelLeft: "Group size:",
+        placeholder: "Number",
+      },
+      {
+        number: 10,
+        type: "input",
+        labelLeft: "Pickup point:",
+        placeholder: "Enter location",
+      },
+    ],
+  },
+
+  // =====================================
+  // PART 3
+  // =====================================
+  {
+    title: "Part 3",
+    description: "Listening Part 3 – Answer all 10 questions.",
+    questions: [
+      // MCQs 1–6
+      {
+        number: 1,
+        type: "mcq",
+        question: "Part 3 - Question 1",
+        options: [
+          { label: "A", text: "Option A1" },
+          { label: "B", text: "Option B1" },
+          { label: "C", text: "Option C1" },
+        ],
+      },
+      {
+        number: 2,
+        type: "mcq",
+        question: "Part 3 - Question 2",
+        options: [
+          { label: "A", text: "Option A2" },
+          { label: "B", text: "Option B2" },
+          { label: "C", text: "Option C2" },
+        ],
+      },
+      {
+        number: 3,
+        type: "mcq",
+        question: "Part 3 - Question 3",
+        options: [
+          { label: "A", text: "Option A3" },
+          { label: "B", text: "Option B3" },
+          { label: "C", text: "Option C3" },
+        ],
+      },
+      {
+        number: 4,
+        type: "mcq",
+        question: "Part 3 - Question 4",
+        options: [
+          { label: "A", text: "Option A4" },
+          { label: "B", text: "Option B4" },
+          { label: "C", text: "Option C4" },
+        ],
+      },
+      {
+        number: 5,
+        type: "mcq",
+        question: "Part 3 - Question 5",
+        options: [
+          { label: "A", text: "Option A5" },
+          { label: "B", text: "Option B5" },
+          { label: "C", text: "Option C5" },
+        ],
+      },
+      {
+        number: 6,
+        type: "mcq",
+        question: "Part 3 - Question 6",
+        options: [
+          { label: "A", text: "Option A6" },
+          { label: "B", text: "Option B6" },
+          { label: "C", text: "Option C6" },
+        ],
+      },
+
+      // Inputs 7–10
+      {
+        number: 7,
+        type: "input",
+        labelLeft: "Course name:",
+        placeholder: "Enter course",
+      },
+      {
+        number: 8,
+        type: "input",
+        labelLeft: "Professor name:",
+        placeholder: "Enter name",
+      },
+      {
+        number: 9,
+        type: "input",
+        labelLeft: "Department:",
+        placeholder: "Enter department",
+      },
+      {
+        number: 10,
+        type: "input",
+        labelLeft: "Meeting time:",
+        placeholder: "Enter time",
+      },
+    ],
+  },
+
+  // =====================================
+  // PART 4
+  // =====================================
+  {
+    title: "Part 4",
+    description: "Listening Part 4 – Answer all 10 questions.",
+    questions: [
+      // MCQs 1–6
+      {
+        number: 1,
+        type: "mcq",
+        question: "Part 4 - Question 1",
+        options: [
+          { label: "A", text: "Option A1" },
+          { label: "B", text: "Option B1" },
+          { label: "C", text: "Option C1" },
+        ],
+      },
+      {
+        number: 2,
+        type: "mcq",
+        question: "Part 4 - Question 2",
+        options: [
+          { label: "A", text: "Option A2" },
+          { label: "B", text: "Option B2" },
+          { label: "C", text: "Option C2" },
+        ],
+      },
+      {
+        number: 3,
+        type: "mcq",
+        question: "Part 4 - Question 3",
+        options: [
+          { label: "A", text: "Option A3" },
+          { label: "B", text: "Option B3" },
+          { label: "C", text: "Option C3" },
+        ],
+      },
+      {
+        number: 4,
+        type: "mcq",
+        question: "Part 4 - Question 4",
+        options: [
+          { label: "A", text: "Option A4" },
+          { label: "B", text: "Option B4" },
+          { label: "C", text: "Option C4" },
+        ],
+      },
+      {
+        number: 5,
+        type: "mcq",
+        question: "Part 4 - Question 5",
+        options: [
+          { label: "A", text: "Option A5" },
+          { label: "B", text: "Option B5" },
+          { label: "C", text: "Option C5" },
+        ],
+      },
+      {
+        number: 6,
+        type: "mcq",
+        question: "Part 4 - Question 6",
+        options: [
+          { label: "A", text: "Option A6" },
+          { label: "B", text: "Option B6" },
+          { label: "C", text: "Option C6" },
+        ],
+      },
+
+      // Inputs 7–10
+      {
+        number: 7,
+        type: "input",
+        labelLeft: "Topic:",
+        placeholder: "Lecture topic",
+      },
+      {
+        number: 8,
+        type: "input",
+        labelLeft: "Key term:",
+        placeholder: "Enter key term",
+      },
+      {
+        number: 9,
+        type: "input",
+        labelLeft: "Main point:",
+        placeholder: "Main idea",
+      },
+      {
+        number: 10,
+        type: "input",
+        labelLeft: "Speaker:",
+        placeholder: "Name",
+      },
+    ],
+  },
+];
