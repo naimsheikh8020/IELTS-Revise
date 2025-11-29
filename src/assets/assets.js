@@ -41,8 +41,13 @@ import speakingrecent from "./speakingrecent.svg"
 import readingrecent from "./readingrecent.svg"
 import recentActivity from "./recentActivite.svg"
 import leftarrow from "./leftarrow.svg"
-
+import Autosave from "./Auto-save.svg"
+import AudioPlayer from "./audioPlayer.svg"
+import restore from "./restore.svg"
 const assets ={
+  restore,
+  AudioPlayer,
+  Autosave,
   recentActivity,
   leftarrow,
   listingrecent,

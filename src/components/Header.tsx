@@ -232,7 +232,7 @@ const Header: React.FC = () => {
           <X size={28} />
         </button>
 
-        <div className="flex flex-col gap-6 text-lg font-medium text-gray-700">
+        <div className="flex flex-col  gap-6 text-lg font-medium text-gray-700">
           {!isLoggedIn ? (
             <>
               {navItems.map(({ label, to }) => (
