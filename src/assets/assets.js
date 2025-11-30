@@ -581,3 +581,31 @@ export const partDataList = [
     ],
   },
 ];
+// src/data/writingTasks.ts
+
+export const writingTasks = [
+  {
+    id: 1,
+    title: "Task 1 - Academic Writing",
+    minWords: 150,
+    question: `
+The chart below shows the percentage of households with different types of internet connection in a European country from 2010 to 2020.
+
+Summarize the information by selecting and reporting the main features, and make comparisons where relevant.
+
+Write at least 150 words.
+    `
+  },
+  {
+    id: 2,
+    title: "Task 2 - Essay Writing",
+    minWords: 250,
+    question: `
+Some people believe that unpaid community service should be made compulsory in high school.
+
+Do you agree or disagree?
+
+Write at least 250 words.
+    `
+  }
+];

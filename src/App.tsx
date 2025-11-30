@@ -28,6 +28,7 @@ import Reading from "./pages/Reading";
 import NotFound from "./pages/NotFound";
 
 
+
 const App = () => {
   return (
     <div>
@@ -69,6 +70,7 @@ const App = () => {
         {/* Dashboard Routes */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/listing" element={<Listing />} />
+        {/* <Route path="/result" element={<ResultPage />} /> */}
         <Route path="/reading" element={<Reading />} />
         <Route path="/writing" element={<Writing />} />
         <Route path="/speaking" element={<Speaking />} />
