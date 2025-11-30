@@ -26,6 +26,8 @@ import Mocktest from "./pages/Mocktest";
 import Profile from "./pages/Profile";
 import Reading from "./pages/Reading";
 import NotFound from "./pages/NotFound";
+import ProtectedFeedbackPage from "./components/Writing/ProtectedFeedbackPage";
+import WritingAIFeedbackPage from "./components/Writing/WritingAIFeedbackPage";
 
 
 
@@ -73,6 +75,14 @@ const App = () => {
         {/* <Route path="/result" element={<ResultPage />} /> */}
         <Route path="/reading" element={<Reading />} />
         <Route path="/writing" element={<Writing />} />
+        <Route
+    path="/writing-feedback"
+    element={
+      <ProtectedFeedbackPage>
+        <WritingAIFeedbackPage />
+      </ProtectedFeedbackPage>
+    }
+  />
         <Route path="/speaking" element={<Speaking />} />
         <Route path="/mock-test" element={<Mocktest />} />
         <Route path="/profile" element={<Profile />} />

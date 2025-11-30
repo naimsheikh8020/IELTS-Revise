@@ -609,3 +609,22 @@ Write at least 250 words.
     `
   }
 ];
+export const fakeAiResult = {
+  overall: 7.5,
+  criteria: [
+    { label: "Task Achievement", score: 7 },
+    { label: "Coherence & Cohesion", score: 8 },
+    { label: "Lexical Resource", score: 7.5 },
+    { label: "Grammar & Accuracy", score: 7 },
+  ],
+  strengths: [
+    "Clear overview of main trends",
+    "Good use of data to support points",
+    "Appropriate paragraph structure",
+  ],
+  improvements: [
+    "Include more specific data comparisons",
+    "Use more varied vocabulary for trends",
+    "Add a stronger conclusion",
+  ],
+};

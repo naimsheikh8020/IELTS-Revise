@@ -1,6 +1,8 @@
 // src/components/writing/WritingTaskBox.tsx
 import { writingTasks } from "../../assets/assets";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useWritingStore } from "../../store/writingStore";
 
 interface Props {
   activeTask: number;
@@ -11,6 +13,16 @@ export default function WritingTaskBox({ activeTask }: Props) {
 
   const [text, setText] = useState("");
   const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+
+  const navigate = useNavigate();
+  const { setResponse, allowFeedback } = useWritingStore();
+
+  // ⭐ User can submit ANY number of words — no validation
+  const handleFeedback = () => {
+    setResponse(text);       // store text
+    allowFeedback();         // allow feedback page access
+    navigate("/writing-feedback"); // navigate
+  };
 
   return (
     <div className="w-full bg-white border border-gray-200 rounded-xl p-5 shadow-sm mt-6">
@@ -30,19 +42,19 @@ export default function WritingTaskBox({ activeTask }: Props) {
           className="w-full min-h-[180px] sm:min-h-[220px] border border-gray-200 rounded-xl p-4 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
         ></textarea>
 
+        {/* ⭐ Only showing word count, NOT validating */}
         <div className="text-right text-sm text-gray-500 mt-1">
-          {wordCount} / {task.minWords} words
+          {wordCount} / {task.minWords} words (recommended)
         </div>
 
         <div className="w-full flex justify-center mt-6">
-  <button
-    onClick={() => console.log("Send to API:", text)}
-    className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 flex items-center gap-2"
-  >
-    ✨ Get AI Feedback
-  </button>
-</div>
-
+          <button
+            onClick={handleFeedback}
+            className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 flex items-center gap-2"
+          >
+            ✨ Get AI Feedback
+          </button>
+        </div>
 
         <p className="text-center text-gray-500 mt-3 text-sm">
           AI will evaluate grammar, coherence, vocabulary, and task response.
