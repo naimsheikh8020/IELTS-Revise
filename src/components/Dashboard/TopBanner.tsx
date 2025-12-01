@@ -5,7 +5,7 @@ import SecondaryButton from "../Button/SecondaryButton";
 
 const TopBanner = () => {
   return (
-    <div className="bg-white  p-6 md:p-10 rounded-2xl shadow-md space-y-4">
+    <div className="bg-white p-6 md:p-10 rounded-2xl shadow-md space-y-4">
       {/* Title */}
       <h2 className="font-bold text-blue-600 text-2xl sm:text-3xl leading-relaxed">
         Welcome back, {userData.name}! <span>🎯</span>

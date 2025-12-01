@@ -44,9 +44,15 @@ import leftarrow from "./leftarrow.svg"
 import Autosave from "./Auto-save.svg"
 import AudioPlayer from "./audioPlayer.svg"
 import restore from "./restore.svg"
+import mic_with_blue_bg from "./mic_with_blue_bg.svg"
+import AIAvatar01 from "./AIAvatar01.svg"
+
+
 const assets ={
   restore,
+  AIAvatar01,
   AudioPlayer,
+  mic_with_blue_bg,
   Autosave,
   recentActivity,
   leftarrow,
