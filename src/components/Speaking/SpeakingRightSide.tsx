@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mic, Upload, Award, MessageSquare, BookOpen, Volume2, FileText, RotateCcw, Download } from 'lucide-react';
-import assets from "../../assets/assets"
-// Mock assets - replace with your actual assets
-const assets01 = {
-  mic_with_blue_bg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z'%3E%3C/path%3E%3Cpath d='M19 10v2a7 7 0 0 1-14 0v-2'%3E%3C/path%3E%3Cline x1='12' y1='19' x2='12' y2='23'%3E%3C/line%3E%3Cline x1='8' y1='23' x2='16' y2='23'%3E%3C/line%3E%3C/svg%3E",
-};
+
+// Mock AI Avatar
+const AIAvatarPlaceholder = () => (
+  <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+    <MessageSquare className="w-12 h-12 text-white" />
+  </div>
+);
 
 // Result Page Component
 const ResultPage = ({ onTakeAnotherTest, onViewDetailedFeedback, onCompareWithPrevious, onDownloadReport }) => {
@@ -258,7 +260,7 @@ const SpeakingRightSide = () => {
   }
 
   return (
-    <div className="w-full h-full bg-white">
+    <div className="w-full h-full bg-white p-4">
       <div className="w-full max-w-full">
         {/* Top Section - Always Visible */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-5 mb-4">
@@ -282,11 +284,9 @@ const SpeakingRightSide = () => {
           {/* AI Avatar Section */}
           <div className="flex flex-col items-center mb-6">
             <div className="relative mb-4">
-              <img 
-                src={assets.AIAvatar01} 
-                alt="AI Avatar" 
-                className="w-[100px] h-[100px] md:w-[110px] md:h-[110px] rounded-full"
-              />
+              <div className="w-[100px] mb-5 h-[100px] md:w-[110px] md:h-[110px]">
+                <AIAvatarPlaceholder />
+              </div>
               {isAISpeaking && (
                 <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 flex gap-0.5">
                   {[...Array(7)].map((_, i) => (
@@ -303,7 +303,7 @@ const SpeakingRightSide = () => {
               )}
             </div>
             
-            <h4 className="text-[15px] font-semibold text-gray-900 mb-1">
+            <h4 className="text-[15px] mt-3 font-semibold text-gray-900 mb-1">
               IELTS AI Examiner
             </h4>
             <p className="text-[13px] text-gray-500">
@@ -453,6 +453,44 @@ const SpeakingRightSide = () => {
               </label>
             </div>
           </div>
+
+          {/* Recorded Audio Playback Section */}
+          {recordedAudios.length > 0 && (
+            <div className="border-t border-gray-100 pt-5 mt-5">
+              <div className="flex items-center gap-2 mb-4">
+                <Volume2 className="w-[18px] h-[18px] text-gray-600" strokeWidth={2.5} />
+                <p className="text-[13px] font-medium text-gray-700">
+                  Your Recordings ({recordedAudios.length})
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                {recordedAudios.map((recording, index) => (
+                  <div 
+                    key={index}
+                    className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[13px] font-medium text-gray-700">
+                        Part {recording.part} Recording
+                      </span>
+                      <span className="text-[11px] text-gray-500">
+                        Recording {index + 1}
+                      </span>
+                    </div>
+                    <audio 
+                      controls 
+                      src={recording.url}
+                      className="w-full h-10"
+                      style={{ outline: 'none' }}
+                    >
+                      Your browser does not support the audio element.
+                    </audio>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
