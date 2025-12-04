@@ -46,9 +46,10 @@ import AudioPlayer from "./audioPlayer.svg"
 import restore from "./restore.svg"
 import mic_with_blue_bg from "./mic_with_blue_bg.svg"
 import AIAvatar01 from "./AIAvatar01.svg"
-
+import ReadingPassage from "./ReadingPassage.svg"
 
 const assets ={
+  ReadingPassage,
   restore,
   AIAvatar01,
   AudioPlayer,
