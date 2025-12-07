@@ -69,3 +69,5 @@ const ReadingRighPart = () => {
 };
 
 export default ReadingRighPart;
+
+

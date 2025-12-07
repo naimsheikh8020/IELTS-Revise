@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+
+
 const ReadingLeftPart = ({ data }) => {
   // Default data structure - API friendly
   const defaultData = {
@@ -147,3 +149,11 @@ const ReadingLeftPart = ({ data }) => {
 };
 
 export default ReadingLeftPart;
+
+
+
+
+
+
+
+
