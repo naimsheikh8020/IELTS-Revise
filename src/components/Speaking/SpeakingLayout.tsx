@@ -5,7 +5,7 @@ import { speakingData, SpeakingTestList } from "./SpeakingCard";
 
 const SpeakingLayout = () => {
   return (
-    <div className="w-full mx-auto p-4">
+    <div className="w-full mx-auto p-2">
       {/* Parent must NOT have overflow hidden */}
       <div className="flex flex-col md:flex-row gap-6 items-start">
 
