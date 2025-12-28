@@ -4,6 +4,13 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as LinkRouter, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import useAuthStore from "../store/authStore";
+import { FiBookOpen, FiUser } from "react-icons/fi";
+import { LuChartColumnIncreasing } from "react-icons/lu";
+import { MdOutlineHeadphones } from "react-icons/md";
+import { FiPenTool } from "react-icons/fi";
+import { GrMicrophone } from "react-icons/gr";
+import { IoDocumentTextOutline } from "react-icons/io5";
+
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -40,18 +47,17 @@ const Header: React.FC = () => {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
-
         {/* Logo */}
         <LinkRouter to={isLoggedIn ? "/dashboard" : "/"}>
           <img
             src={assets.footer_logo}
             alt="logo"
-            className="w-1/5 cursor-pointer"
+            className="w-1/5  cursor-pointer"
           />
         </LinkRouter>
 
         {/* Desktop Navigation (lg only) */}
-        <nav className="hidden lg:flex items-center gap-6 font-medium text-gray-700">
+        <nav className="hidden lg:flex items-center gap-10 font-medium text-gray-700">
           {!isLoggedIn ? (
             <>
               {navItems.map(({ label, to }) =>
@@ -65,7 +71,7 @@ const Header: React.FC = () => {
                     spy={true}
                     onSetActive={() => setActive(to)}
                     className={`cursor-pointer hover:text-blue-600 ${
-                      active === to ? "text-blue-600 font-semibold" : ""
+                      active === to ? "text-red-600 font-semibold" : ""
                     }`}
                   >
                     {label}
@@ -105,22 +111,37 @@ const Header: React.FC = () => {
                 to="/dashboard"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/dashboard"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
+
+
+                <div className="flex items-center gap-1">
+                  <LuChartColumnIncreasing  className="text-xl" />
                 Dashboard
+              </div>
+
+
+
+           
               </LinkRouter>
 
               <LinkRouter
                 to="/listing"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/listing"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
-                Listing
+
+
+                <div className="flex items-center gap-1">
+                  <MdOutlineHeadphones  className="text-xl" />
+                Listening
+              </div>
+            
               </LinkRouter>
 
               {/* ✅ FIXED: Reading added here */}
@@ -128,55 +149,95 @@ const Header: React.FC = () => {
                 to="/reading"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/reading"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
+
+              <div className="flex items-center gap-1">
+                  <FiBookOpen className="text-xl" />
                 Reading
+              </div>
+
+
               </LinkRouter>
 
               <LinkRouter
                 to="/writing"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/writing"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
+
+
+                 <div className="flex items-center gap-1">
+                  <FiPenTool   className="text-xl" />
                 Writing
+              </div>
+
+
               </LinkRouter>
 
               <LinkRouter
                 to="/speaking"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/speaking"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
+
+                 <div className="flex items-center gap-1">
+                  <GrMicrophone  className="text-xl" />
                 Speaking
+              </div>
+
+
+                
+
+
               </LinkRouter>
 
               <LinkRouter
                 to="/mock-test"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/mock-test"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
-                Mock Test
+
+
+                
+
+
+                 <div className="flex items-center gap-1">
+                  <IoDocumentTextOutline  className="text-xl" />
+             <span className="inline w-24">   Mock Test</span>
+              </div>
+
+
               </LinkRouter>
 
               <LinkRouter
                 to="/profile"
                 className={`cursor-pointer hover:text-blue-600 ${
                   location.pathname === "/profile"
-                    ? "text-blue-600 font-bold"
+                    ? " text-white bg-blue-600 font-light hover:text-white outline p-2 rounded-xl "
                     : ""
                 }`}
               >
+
+
+                 <div className="flex items-center gap-1">
+                  <FiUser className="text-xl" />
                 Profile
+              </div>
+
+
+                
               </LinkRouter>
 
               <button
