@@ -9,7 +9,7 @@ import RecentActivity from "../components/Dashboard/RecentActivity";
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen  pt-28 sm:pt-28 px-4 sm:px-8 md:px-12">
+    <div className="min-h-screen  pt-28 sm:pt-28 px-6 ">
       <TopBanner />
       <ScoreSection/>
       <ChartSection/>
