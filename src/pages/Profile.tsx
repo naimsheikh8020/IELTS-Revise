@@ -5,7 +5,7 @@ import ProfileTabs from '../components/Profile/RightSide'
 
 const Profile = () => {
   return (
-    <div className="min-h-screen pt-28 sm:pt-28 px-4 sm:px-8 md:px-12">
+    <div className="min-h-screen pt-28 sm:pt-28 px-4 ">
       
       <ProfileHeader />
       <div className="flex flex-col md:flex-row gap-6 mt-6 items-center md:items-start mb-6">
