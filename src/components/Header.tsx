@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import assets from "../assets/assets";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as LinkRouter, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { icons, Menu, X } from "lucide-react";
 import useAuthStore from "../store/authStore";
 import { FiBookOpen, FiUser } from "react-icons/fi";
 import { LuChartColumnIncreasing } from "react-icons/lu";
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   const { isLoggedIn, logout } = useAuthStore();
 
   const navItems = [
-    { label: "Home", to: "home" },
+    {  label: "Home", to: "home",  },
     { label: "Features", to: "features" },
     { label: "Reviews", to: "reviews" },
     { label: "Pricing", to: "pricing" },
@@ -46,15 +46,17 @@ const Header: React.FC = () => {
 
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div className="flex justify-between items-center px-6 md:px-12 py-4">
+      <div className="flex justify-between items-center px-6 md:px-12 py-4 ">
         {/* Logo */}
-        <LinkRouter to={isLoggedIn ? "/dashboard" : "/"}>
+        <div className=" w-36">
+          <LinkRouter to={isLoggedIn ? "/dashboard" : "/"}>
           <img
             src={assets.footer_logo}
             alt="logo"
-            className="w-1/5  cursor-pointer"
+            className="w-full  cursor-pointer"
           />
         </LinkRouter>
+        </div>
 
         {/* Desktop Navigation (lg only) */}
         <nav className="hidden lg:flex items-center gap-10 font-medium text-gray-700">

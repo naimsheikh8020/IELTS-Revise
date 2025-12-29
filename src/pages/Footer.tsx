@@ -1,163 +1,186 @@
-// components/Footer.jsx
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import assets from '../assets/assets'
+
+import { Link, useNavigate } from "react-router-dom";
+import assets from "../assets/assets";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const Footer = () => {
   const navigate = useNavigate();
 
   const scrollToSection = (sectionId) => {
-    navigate('/');
+    navigate("/");
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }, 100);
   };
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Section */}
+    <footer className="bg-white border-t  mt-10 border-gray-100 p-6">
+      <div className="">
+
+     
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+        
           <div>
-            <img  src={assets.footer_logo} className='mb-2 w-3/4 '/>
-            <p className="text-gray-600 text-sm mb-4">
-              Your trusted partner for IELTS exam preparation with expert-created practice exam questions.
+            <img
+              src={assets.footer_logo}
+              alt="IELTS Revise"
+              className="w-40 mb-4"
+            />
+            <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+              Master your IELTS exam with cutting-edge AI technology and
+              personalized feedback.
             </p>
-            <div className="text-gray-600 text-sm space-y-1">
-              <p>71-75 Shelton Street</p>
-              <p>Covent Garden</p>
-              <p>London WC2H 9JQ</p>
-              <p>United Kingdom</p>
+
+         
+            <div className="flex items-center gap-3">
+              <a className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center">
+                <FaFacebookF size={14} />
+              </a>
+              <a className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center">
+                <FaTwitter size={14} />
+              </a>
+              <a className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center">
+                <FaInstagram size={14} />
+              </a>
+              <a className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center">
+                <FaLinkedinIn size={14} />
+              </a>
             </div>
           </div>
 
-          {/* IELTS Sections */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">IELTS Sections</h4>
-            <ul className="space-y-2 ">
+            <h4 className="font-semibold text-gray-900 mb-4">
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-sm">
               <li>
-                <button 
-                  onClick={() => scrollToSection('ielts-practice')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
-                >
-                  Listening
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('ielts-practice')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
-                >
-                  Reading
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('ielts-practice')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
-                >
-                  Writing
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('ielts-practice')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
-                >
-                  Speaking
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Resources</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  to="/about" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
-                >
+                <Link to="/about" className="text-gray-600 hover:text-blue-600">
                   About Us
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('pricing')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
+                <button
+                  onClick={() => scrollToSection("features")}
+                  className="text-gray-600 hover:text-blue-600"
+                >
+                  Features
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("pricing")}
+                  className="text-gray-600 hover:text-blue-600"
                 >
                   Pricing
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('FrequentlyAskedQuestions')}
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
+                <button
+                  onClick={() => scrollToSection("testimonials")}
+                  className="text-gray-600 hover:text-blue-600"
                 >
-                  FAQ
+                  Testimonials
                 </button>
               </li>
+            </ul>
+          </div>
+
+  
+          <div>
+            <h4 className="font-semibold text-gray-900 mb-4">
+              Resources
+            </h4>
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link 
-                  to="/blog" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors text-sm cursor-pointer"
-                >
+                <Link to="/practice-tests" className="text-gray-600 hover:text-blue-600">
+                  Practice Tests
+                </Link>
+              </li>
+              <li>
+                <Link to="/study-tips" className="text-gray-600 hover:text-blue-600">
+                  Study Tips
+                </Link>
+              </li>
+              <li>
+                <Link to="/ielts-guide" className="text-gray-600 hover:text-blue-600">
+                  IELTS Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-600 hover:text-blue-600">
                   Blog
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
-
-<div>
-  <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
-  <ul className="space-y-2">
-    <li>
-      <Link 
-        to="/contact"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-      >
-        Contact Us
-      </Link>
-    </li>
-
-    <li>
-      <Link 
-        to="/privacy"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-      >
-        Privacy Policy
-      </Link>
-    </li>
-
-    <li>
-      <Link 
-        to="/terms"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-      >
-        Terms of Service
-      </Link>
-    </li>
-  </ul>
-</div>
-
+    
+          <div>
+            <h4 className="font-semibold text-gray-900 mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/privacy" className="text-gray-600 hover:text-blue-600">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-gray-600 hover:text-blue-600">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-600 hover:text-blue-600">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/support" className="text-gray-600 hover:text-blue-600">
+                  Support
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <p className="text-center text-gray-600 text-sm">
-            © 2025 IELTS Revision. All rights reserved.
+     
+        <div className="mt-14 text-center">
+          <h4 className="font-semibold text-gray-900 mb-2">
+            Stay Updated
+          </h4>
+          <p className="text-sm text-gray-600 mb-5">
+            Stay updated with the latest IELTS practice tests and tips.
+          </p>
+
+          <div className="flex justify-center gap-3 flex-wrap">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-64 px-4 py-2 border rounded-full text-sm outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button className="px-6 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700">
+              Subscribe
+            </button>
+          </div>
+        </div>
+
+        
+        <div className="mt-14 pt-6 border-t border-gray-200">
+          <p className="text-center text-xs text-gray-500">
+            © 2025 IELTS Revise. All rights reserved.
           </p>
         </div>
+
       </div>
     </footer>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SectionHeader from "../components/SectionHeader";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Audio from "../components/Listing/Audio";
 import ListingSidebar from "../components/Listing/ListingSidebar";
 import PartContainer from "../components/Listing/PartContainer";
@@ -148,12 +148,12 @@ const Listing = () => {
                 Cancel
               </button>
 
-              <button
+              <Link to="/feedback"
                 onClick={handleFinalSubmit}
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg"
               >
                 Submit
-              </button>
+              </Link>
             </div>
           </div>
         </div>
