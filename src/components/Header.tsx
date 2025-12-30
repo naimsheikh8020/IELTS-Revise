@@ -73,7 +73,7 @@ const Header: React.FC = () => {
                     spy={true}
                     onSetActive={() => setActive(to)}
                     className={`cursor-pointer hover:text-blue-600 ${
-                      active === to ? "text-red-600 font-semibold" : ""
+                      active === to ? "cursor-pointer px-6 py-2 rounded-xl border-2 border-blue-500 bg-gradient-to-b from-blue-50 to-blue-100 text-blue-600 font-medium hover:from-blue-100 hover:to-blue-200 hover:text-blue-700 transition-all duration-200" : ""
                     }`}
                   >
                     {label}
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
                 to="/blog"
                 className={`hover:text-blue-600 ${
                   location.pathname === "/blog"
-                    ? "text-blue-600 font-semibold"
+                    ? "cursor-pointer px-6 py-2 rounded-xl border-2 border-blue-500 bg-gradient-to-b from-blue-50 to-blue-100 text-blue-600 font-medium hover:from-blue-100 hover:to-blue-200 hover:text-blue-700 transition-all duration-200"
                     : ""
                 }`}
               >
